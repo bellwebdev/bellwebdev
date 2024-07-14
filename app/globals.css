@@ -1,0 +1,54 @@
+/* Import Rubik Font */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  --dark-blue: #122e4e;
+  --blue: #4069b2;
+  --lightBlue: #64cdf5;
+  --turqoise: #14bbb8;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+/* Background Styles */
+.darkBlueBg {
+  background-color: var(--dark-blue);
+}
+
+.blueBg {
+  background-color: var(--blue);
+}
+
+.lightBlueBg {
+  background-color: var(--lightBlue);
+}
+
+.turqoiseBg {
+  background-color: var(--turqoise);
+}
+
+/* END Background Styles */
+
+/* Font Styles */
+.darkBlueText {
+  color: var(--dark-blue) !important;
+}
+
+.blueText {
+  color: var(--blue);
+}
+
+.lightBlueText {
+  color: var(--lightBlue);
+}
+
+.turqoiseText {
+  color: var(--turqoise);
+}
+
+/* NavBar Toggle */
+.navbar-toggler {
+  color: var(--lightBlue);
+}
