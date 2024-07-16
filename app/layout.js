@@ -1,9 +1,7 @@
-import { Inter } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.css";
 import "./globals.css";
 import Header from "@/components/Header";
-
-const inter = Inter({ subsets: ["latin"] });
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Bell WebDev",
@@ -16,6 +14,7 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
