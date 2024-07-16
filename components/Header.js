@@ -11,6 +11,7 @@ const Header = () => {
               src="projectImages/BellWebDevHFullVector.svg"
               width={150}
               height={50}
+              alt="Bell WebDev Logo"
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
