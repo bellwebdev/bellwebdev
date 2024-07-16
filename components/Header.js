@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div>
       <Navbar expand="md">
-        <Container fluid className="d-flex align-items-center">
+        <Container className="d-flex align-items-center">
           <Navbar.Brand href="/" className="d-flex align-items-center">
             <Image
               src="projectImages/BellWebDevHFullVector.svg"
