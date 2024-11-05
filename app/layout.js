@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.css";
-import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import "./globals.scss";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata = {
   title: "Bell WebDev",
