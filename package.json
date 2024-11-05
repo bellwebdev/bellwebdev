@@ -27,6 +27,7 @@
     "@babel/preset-react": "^7.24.7",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
-    "frontmatter-markdown-loader": "^3.7.0"
+    "frontmatter-markdown-loader": "^3.7.0",
+    "sass": "^1.77.8"
   }
 }
