@@ -1,0 +1,10 @@
+.tile {
+  display: flex;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 2px 2px 25px 0px #00000021;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  span {
+    padding-left: 1rem;
+  }
+}

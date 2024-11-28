@@ -1,0 +1,20 @@
+.form {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: white;
+  img {
+    max-width: 210px;
+  }
+  select {
+    color: var(--bs-secondary-color);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 992px) {
+  .form {
+    button {
+      width: 100%;
+    }
+  }
+}

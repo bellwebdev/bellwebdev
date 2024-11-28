@@ -1,0 +1,24 @@
+.card {
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 2px 2px 25px 0px #00000021;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  img {
+    max-width: 50px;
+    height: 50px;
+  }
+  h3 {
+    font-size: 18px;
+    margin-top: 0.875rem;
+  }
+  .iconBg {
+    display: inline-block;
+    padding: 0.5rem;
+    background: #14bbb826;
+    border-radius: 8px;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
