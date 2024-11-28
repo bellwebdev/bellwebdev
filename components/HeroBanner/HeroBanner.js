@@ -1,6 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Button from "../Button";
-import Image from "next/image";
 import hero from "./hero.module.scss";
 
 const HeroBanner = (props) => {
