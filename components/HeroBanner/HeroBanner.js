@@ -8,8 +8,8 @@ const HeroBanner = (props) => {
       <Container className="py-3">
         <Row className="align-items-center">
           <Col xs={12} md={6}>
-            <h1>Elevate Your Online Presence</h1>
-            <p>Contact Us Today to Get Started</p>
+            <h1>{props.heading}</h1>
+            <p>{props.subheading}</p>
             {props.btn && (
               <Button className={`${hero.fullWidth} blueBg whiteText`}>
                 Get Started

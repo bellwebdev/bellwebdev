@@ -6,10 +6,10 @@ import styles from "./contact.module.scss";
 
 const ContactForm = (props) => {
   return (
-    <div className="turqoiseBg">
+    <div className={`turqoiseBg ${styles.bRadius}`}>
       <Container>
         <Form className={styles.form}>
-          <Row className="justify-content-between align-items-center">
+          <Row className="justify-content-between align-items-center px-3">
             <Col lg={5} className="text-center">
               <img
                 className="img-fluid mb-3"

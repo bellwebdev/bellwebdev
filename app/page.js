@@ -12,6 +12,8 @@ export default function Home() {
         bgColor="darkBlueBg"
         btn={true}
         img="/projectImages/macbook-with-code.jpg"
+        heading="Elevate Your Online Presence"
+        subheading="Contact Us Today to Get Started"
       />
       <Container className={`${styles.services} my-5`}>
         <Row className="justify-content-center text-center">
