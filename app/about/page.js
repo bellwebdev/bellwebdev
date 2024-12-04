@@ -49,10 +49,10 @@ export default function Home() {
                 looks great but also functions flawlessly across all devices and
                 platforms, while being ADA compliant and SEO optimized.
               </p>
-              <h2 className="mt-5">Where We're Located</h2>
+              <h2 className="mt-5">Where We&apos;re Located</h2>
               <p>
                 We are located in the Lehigh Valley in Pennsylvania, but if
-                you're not local, we work with clients from all over!
+                you&apos;re not local, we work with clients from all over!
               </p>
               <p>
                 If you are in the area and are interested in our services, feel
