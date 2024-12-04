@@ -27,9 +27,9 @@ export default function Home() {
             <hr className="mt-3 mb-4"></hr>
             <p className="text-center">
               We believe that every website should be a powerful tool that helps
-              you achieve your business goals. That’s why we focus on providing
-              high-quality development services, seamless user experiences, and
-              measurable results.
+              you achieve your business goals. That&apos;s why we focus on
+              providing high-quality development services, seamless user
+              experiences, and measurable results.
             </p>
           </Col>
         </Row>
@@ -45,8 +45,8 @@ export default function Home() {
                 your needs and budget.
               </p>
               <p>
-                We’re dedicated to ensuring that your website not only looks
-                great but also functions flawlessly across all devices and
+                We&apos;re dedicated to ensuring that your website not only
+                looks great but also functions flawlessly across all devices and
                 platforms, while being ADA compliant and SEO optimized.
               </p>
               <h2 className="mt-5">Where We're Located</h2>
