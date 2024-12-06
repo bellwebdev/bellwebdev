@@ -91,9 +91,9 @@ export default function Services() {
               <hr className="mt-3 mb-4"></hr>
               <p>
                 Here are a variety of services we offer. We are dedicated to
-                improving our service, so please reach out to us if you don't
-                see what you're looking for. We may still be able to do it for
-                you!
+                improving our service, so please reach out to us if you
+                don&apos;t see what you&apos;re looking for. We may still be
+                able to do it for you!
               </p>
             </Col>
           </Row>
