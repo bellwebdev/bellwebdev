@@ -1,22 +1,18 @@
 import HeroBanner from "@/components/HeroBanner/HeroBanner";
 import ContactForm from "@/components/ContactForm";
-import Card from "@/components/Card";
-import Tile from "@/components/Tile";
+
 import { Col, Container, Row } from "react-bootstrap";
 import styles from "./about.module.scss";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
-
-export default function Home() {
+export default function About() {
   return (
     <main>
       <HeroBanner
         bgColor="darkBlueBg"
         btn={true}
         img="/projectImages/macbook-with-code.jpg"
-        heading="Who We Are"
-        subheading="Let’s Build a Better Website for Your Business. Contact Us Today!"
+        heading="Our Web Development Services"
+        subheading="Precision, Performance, and Accessibility"
       />
       <Container className={`${styles.about} my-5`}>
         <Row className="justify-content-center text-center">
