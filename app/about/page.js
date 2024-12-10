@@ -10,13 +10,13 @@ export default function About() {
       <HeroBanner
         bgColor="darkBlueBg"
         btn={true}
-        img="/projectImages/macbook-with-code.jpg"
-        heading="Our Web Development Services"
-        subheading="Precision, Performance, and Accessibility"
+        img="/projectImages/vibey-web-dev-image.jpg"
+        heading="Who We Are"
+        subheading="Let’s Build a Better Website for Your Business. Contact Us Today!"
       />
-      <Container className={`${styles.about} my-5`}>
+      <Container className={`${styles.about} my-5 py-5`}>
         <Row className="justify-content-center text-center">
-          <Col lg={6}>
+          <Col lg={8}>
             <h2 className="mb-0">
               Your Trusted Partner for Web Development and Optimization
             </h2>
@@ -30,7 +30,7 @@ export default function About() {
           </Col>
         </Row>
       </Container>
-      <div className="blueBg">
+      <div className="blueBg py-5">
         <Container className="py-5">
           <Row className="align-items-center">
             <Col lg={6} className="whiteText">
@@ -65,8 +65,11 @@ export default function About() {
           </Row>
         </Container>
       </div>
-      <Container className="my-5">
-        <ContactForm />
+      <Container className="my-5 py-5">
+        <ContactForm
+          formHeading="Build the Future of Your Business with Custom Web Solutions"
+          formSubhead="Partner with Our Expert Team to Create Scalable, High-Performance Websites That Drive Results."
+        />
       </Container>
     </main>
   );

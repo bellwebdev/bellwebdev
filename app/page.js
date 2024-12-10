@@ -1,12 +1,12 @@
 import HeroBanner from "@/components/HeroBanner/HeroBanner";
 import ContactForm from "@/components/ContactForm";
-import Button from "@/components/Button";
 import Card from "@/components/Card";
 import Tile from "@/components/Tile";
 import { Col, Container, Row } from "react-bootstrap";
 import styles from "./page.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import ButtonLink from "@/components/ButtonLink";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
         heading="Elevate Your Online Presence"
         subheading="Contact Us Today to Get Started"
       />
-      <Container className={`${styles.services} my-5`}>
+      <Container className={`${styles.services} my-5 py-5`}>
         <Row className="justify-content-center text-center mb-3">
           <Col lg={8}>
             <h2 className="mb-0">Our Services</h2>
@@ -32,28 +32,28 @@ export default function Home() {
         <Row>
           <Col lg={4} className="mt-4 mt-lg-0">
             <Card
+              imgSrc="/projectImages/mdi_bug-outline.svg"
+              cardHeader="Free Initial Consultation"
+              cardText="Unlock Your Website's Potential – Schedule a Free Consultation with Us!"
+            />
+          </Col>
+          <Col lg={4} className="mt-4 mt-lg-0">
+            <Card
               imgSrc="/projectImages/gg_website.svg"
               cardHeader="Custom Coded Websites"
-              cardText="Quality sites built just for you"
+              cardText="Uniquely Built Features Crafted to Fit Your Business Needs."
             />
           </Col>
           <Col lg={4} className="mt-4 mt-lg-0">
             <Card
               imgSrc="/projectImages/ri_seo-fill.svg "
               cardHeader="Integrated CMS"
-              cardText="Content management system gives you the power to update your content"
-            />
-          </Col>
-          <Col lg={4} className="mt-4 mt-lg-0">
-            <Card
-              imgSrc="/projectImages/mdi_bug-outline.svg"
-              cardHeader="Bug Fixes & Consultation"
-              cardText="Start small by having us help clean up your current site!"
+              cardText="Content management system gives you the power to update your content."
             />
           </Col>
         </Row>
       </Container>
-      <div className="blueOpacityBg">
+      <div className="blueOpacityBg py-5">
         <Container className="py-5">
           <Row className="align-items-center justify-content-between">
             <Col md={4}>
@@ -62,7 +62,7 @@ export default function Home() {
                 src="./projectImages/apple-products.jpeg"
               />
             </Col>
-            <Col md={7}>
+            <Col md={7} className="mt-4 mt-md-0">
               <h2 className="mb-4">Why Choose Us?</h2>
               <p>
                 When you choose BellWebDev, you’re partnering with a team of
@@ -75,7 +75,7 @@ export default function Home() {
           </Row>
         </Container>
       </div>
-      <Container className="my-5">
+      <Container className="my-5 py-5">
         <Row className="align-items-center">
           <Col lg={6} className={styles.stepImg}>
             <div className="blueBg py-5 ps-4 mx-auto mx-lg-0 d-flex h-100">
@@ -113,19 +113,25 @@ export default function Home() {
                 />
               </Col>
               <Col xs={12} className="mt-4">
-                <Button className={`w-100 p-3 blueBg whiteText`}>
+                <ButtonLink
+                  href="/services"
+                  className={`w-100 p-3 blueBg whiteText`}
+                >
                   Full Service Details{" "}
                   <span className="ps-1">
                     <FontAwesomeIcon icon={faArrowRight} />
                   </span>
-                </Button>
+                </ButtonLink>
               </Col>
             </Row>
           </Col>
         </Row>
       </Container>
-      <Container className="my-5">
-        <ContactForm />
+      <Container className="my-5 py-5">
+        <ContactForm
+          formHeading="Transform Your Ideas into Powerful Digital Experiences"
+          formSubhead="Discover How We Can Help Your Business Grow Online."
+        />
       </Container>
     </main>
   );

@@ -66,13 +66,13 @@ export default function Services() {
       <HeroBanner
         bgColor="darkBlueBg"
         btn={true}
-        img="/projectImages/macbook-with-code.jpg"
+        img="/projectImages/dual-monitor-mac.jpeg"
         heading="Our Web Development Services"
         subheading="Precision, Performance, and Accessibility"
       />
-      <Container className={`my-5`}>
+      <Container className={`my-5 py-5`}>
         <Row className="justify-content-center text-center">
-          <Col lg={6}>
+          <Col lg={8}>
             <h2 className="mb-0">Crafted for Your Business.</h2>
             <hr className="mt-3 mb-4"></hr>
             <p>
@@ -83,9 +83,9 @@ export default function Services() {
           </Col>
         </Row>
       </Container>
-      <div className="blueOpacityBg">
+      <div className="blueOpacityBg py-4">
         <Container className="py-5">
-          <Row className="justify-content-center text-center">
+          <Row className="justify-content-center text-center mb-4">
             <Col md={8}>
               <h2 className="text-center">What We Offer</h2>
               <hr className="mt-3 mb-4"></hr>
@@ -112,8 +112,11 @@ export default function Services() {
           </Row>
         </Container>
       </div>
-      <Container className="my-5">
-        <ContactForm />
+      <Container className="my-5 py-5">
+        <ContactForm
+          formHeading="Ready to build something exceptional?"
+          formSubhead="Get in touch to start your project today!"
+        />
       </Container>
     </main>
   );
