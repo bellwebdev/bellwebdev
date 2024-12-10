@@ -4,7 +4,7 @@ const CONTACT_MESSAGE_FIELDS = {
   firstName: "First Name",
   lastName: "Last Name",
   email: "Email",
-  service: "Potential Service",
+  company: "Company",
   message: "Message",
 };
 
@@ -30,7 +30,7 @@ const handler = async (req, res) => {
       await transporter.sendMail({
         ...mailOptions,
         ...generateEmailContent(data),
-        subject: `POTENTIAL CUSTOMER: ${data.service}`,
+        subject: `POTENTIAL CUSTOMER`,
       });
       return res.status(200).json({ success: true });
     } catch (error) {

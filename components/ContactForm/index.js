@@ -12,7 +12,7 @@ const initValues = {
   firstName: "",
   lastName: "",
   email: "",
-  service: "",
+  company: "",
   message: "",
 };
 
