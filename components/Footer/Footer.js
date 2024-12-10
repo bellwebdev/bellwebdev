@@ -21,15 +21,15 @@ const Footer = () => {
               height={40}
               alt="Bell WebDev Logo"
             />
-            <Link className="ps-3 pe-2" href="/">
+            <Link className="ps-3 pe-2" href="/about">
               About
             </Link>
-            <Link className="px-2" href="/">
-              Contact
+            <Link className="px-2" href="/services">
+              Services
             </Link>
-            <Link className="px-2" href="/">
+            {/* <Link className="px-2" href="/blog">
               Blog
-            </Link>
+            </Link> */}
           </Col>
           <hr className="mt-2 turqoiseText"></hr>
         </Row>
