@@ -7,13 +7,13 @@ blogPosts:
     subtitle: What it’s really like starting a freelance web dev business — the
       highs, the hurdles, and everything in between.
     post: |-
-      <h2>Why we started this agency</h2>
+      ## Why we started this agency
 
-      <h2>Freelance struggles and lessons</h2>
+      ## Freelance struggles and lessons
 
-      <h2>Tools we use</h2>
+      ## Tools we use
 
-      <h2>What’s next</h2>
+      ## What’s next
     date: 09/25/2025
     category: agency-life
   - featured: true
