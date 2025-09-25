@@ -15,6 +15,7 @@ collections:
             name: "blogPosts"
             widget: "list"
             fields:
+              - { label: "URL", name: "url", widget: "string" }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Subtitle", name: "subtitle", widget: "string" }
               - { label: "Post", name: "post", widget: "markdown" }
