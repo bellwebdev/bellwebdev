@@ -72,3 +72,32 @@ footer a {
   text-decoration: none;
   color: white;
 }
+
+/* Custom Tab Styles */
+
+.custom-tabs {
+  ul {
+    background-color: var(--dark-blue);
+    li {
+      button {
+        color: white !important;
+        margin-bottom: 0 !important;
+        &:focus,
+        &:hover,
+        &:not(:focus) {
+          border: none !important;
+          border-radius: 0 !important;
+        }
+        &:hover {
+          background-color: var(--blue) !important;
+          outline: 1px solid var(--dark-blue) !important;
+        }
+      }
+      .active {
+        background-color: var(--blue) !important;
+        border-radius: 0;
+        border: none !important;
+      }
+    }
+  }
+}

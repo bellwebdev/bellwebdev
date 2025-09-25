@@ -18,4 +18,28 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Subtitle", name: "subtitle", widget: "string" }
               - { label: "Post", name: "post", widget: "markdown" }
-              - { label: "Publish Date", name: "date", widget: "datetime", date_format: "MM/DD/YYYY" }
+              - {
+                  label: "Publish Date",
+                  name: "date",
+                  widget: "datetime",
+                  date_format: "MM/DD/YYYY",
+                }
+              - {
+                  label: "Featured",
+                  name: "featured",
+                  widget: "boolean",
+                  default: false,
+                }
+              - {
+                  label: "Category",
+                  name: "category",
+                  widget: "select",
+                  options: ["how-to", "agency-life"],
+                }
+              - {
+                  label: "Blog Image",
+                  name: "blogImage",
+                  widget: "image",
+                  choose_url: true,
+                  default: "/img/macbook-with-code.jpg",
+                }

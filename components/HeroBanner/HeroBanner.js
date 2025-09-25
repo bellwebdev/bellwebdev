@@ -7,7 +7,7 @@ const HeroBanner = (props) => {
     <div className={`${hero.heroBanner} ${props.bgColor} whiteText`}>
       <Container className="py-5">
         <Row className="align-items-center">
-          <Col xs={12} md={6}>
+          <Col xs={12} lg={6}>
             <h1>{props.heading}</h1>
             <p className="my-3">{props.subheading}</p>
             {props.btn && (
@@ -19,7 +19,7 @@ const HeroBanner = (props) => {
               </ButtonLink>
             )}
           </Col>
-          <Col xs={12} md={6} className="text-md-end">
+          <Col xs={12} lg={6} className="text-md-end">
             <img src={props.img} />
           </Col>
         </Row>
