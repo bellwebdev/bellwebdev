@@ -1,8 +1,27 @@
 .blogCard {
   border: 1px solid var(--dark-blue);
   border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   img {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+  }
+  .cardBody {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 992px) {
+  .blogCard {
+    .cardBody {
+      a {
+        max-width: 50%;
+      }
+    }
   }
 }
