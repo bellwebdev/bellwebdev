@@ -8,7 +8,7 @@ const Header = () => {
         <Container className="d-flex align-items-center">
           <Navbar.Brand href="/" className="d-flex align-items-center">
             <Image
-              src="projectImages/BellWebDevHFullVector.svg"
+              src="/projectImages/BellWebDevHFullVector.svg"
               width={150}
               height={50}
               alt="Bell WebDev Logo"
