@@ -6,11 +6,11 @@ import Button from "../Button";
 import Loader from "../Loader";
 import styles from "./contact.module.scss";
 
-import { sendContactForm } from "@/lib/api";
+import { sendContactForm, sendData } from "@/lib/api";
 
 const initValues = {
-  firstName: "",
-  lastName: "",
+  fname: "",
+  lname: "",
   email: "",
   company: "",
   message: "",
@@ -20,21 +20,11 @@ const initState = { values: initValues };
 
 const ContactForm = (props) => {
   const [success, setSuccess] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(false);
   const [state, setState] = useState(initState);
   const { values } = state;
   const [validated, setValidated] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  // const customSelectValidation = () => {
-  //   console.log(values);
-  //   if (!values.service) {
-  //     document
-  //       .getElementById("service")
-  //       .setCustomValidity("Please select a valid option");
-  //   } else {
-  //     document.getElementById("service").setCustomValidity("");
-  //   }
-  // };
 
   const handleChange = ({ target }) => {
     setState((prev) => ({
@@ -66,13 +56,15 @@ const ContactForm = (props) => {
         ...prev,
       }));
       try {
+        await sendData(values);
+      } catch (error) {
+        console.log(error);
+      }
+      try {
         await sendContactForm(values);
         setSuccess(true);
       } catch (error) {
-        setState((prev) => ({
-          ...prev,
-          error: error.message,
-        }));
+        setErrorMsg(true);
       } finally {
         setLoading(false);
       }
@@ -82,7 +74,7 @@ const ContactForm = (props) => {
   return (
     <div className={`turqoiseBg ${styles.bRadius}`} id="contactForm">
       <Container>
-        {!success && (
+        {!success && !errorMsg && (
           <Form
             className={styles.form}
             noValidate
@@ -101,24 +93,24 @@ const ContactForm = (props) => {
               <Col lg={6}>
                 <Row>
                   <Col lg={6}>
-                    <Form.Group className="mb-4" controlId="fName">
+                    <Form.Group className="mb-4" controlId="fname">
                       <Form.Label>First Name *</Form.Label>
                       <Form.Control
                         type="text"
                         placeholder="Enter first name"
-                        name="firstName"
+                        name="fname"
                         onChange={handleChange}
                         required
                       />
                     </Form.Group>
                   </Col>
                   <Col lg={6}>
-                    <Form.Group className="mb-4" controlId="lName">
+                    <Form.Group className="mb-4" controlId="lname">
                       <Form.Label>Last Name *</Form.Label>
                       <Form.Control
                         type="text"
                         placeholder="Enter last name"
-                        name="lastName"
+                        name="lname"
                         onChange={handleChange}
                         required
                       />
@@ -178,6 +170,16 @@ const ContactForm = (props) => {
             <Col className="py-5 my-5">
               <h2>Thank You for You Submission!</h2>
               <p>We will reach out to you within the next 24-48 hours.</p>
+            </Col>
+          </Row>
+        )}
+        {errorMsg && (
+          <Row className="justify-content-center align-items-center py-5 text-center whiteText">
+            <Col className="py-5 my-5">
+              <h2>
+                Sorry about that. Your message cannot be sent at this time.
+              </h2>
+              <p>Please try again later or send us a DM on social media.</p>
             </Col>
           </Row>
         )}
