@@ -139,7 +139,7 @@ blogPosts:
       ![Screenshot of Safari dev tools html code](img/safari-iphone-dev-tools.png)
 
 
-      ![](img/iphone-screenshot.jpeg)
+      ![Screenshot of iphone with element highlighted.](img/iphone-screenshot.jpeg)
 
 
       This workflow saves tons of time compared to guessing or blindly pushing changes.
