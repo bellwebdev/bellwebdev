@@ -54,6 +54,9 @@ blogPosts:
       4. Switch on **Web Inspector**.
 
 
+      ![screenshots of iphone/ipad settings to turn on web inspector](img/web-inspector-settings.jpg)
+
+
       Without this step, your Mac won’t be able to connect to your iPhone’s Safari browser.
 
 
@@ -63,6 +66,9 @@ blogPosts:
       1. Use a **USB cable** to connect your iOS device to your Mac.
 
       2. Unlock your device and tap **Trust This Computer** if prompted.
+
+
+      ![iphone plugged into macbook](img/iphone-plugged-in.jpg)
 
 
       ### Step 3: Turn On the Develop Menu in Safari on Mac
@@ -79,6 +85,9 @@ blogPosts:
 
 
       Now you’ll see a new **Develop** option in Safari’s top navigation.
+
+
+      ![screenshot to turn on develop menu for safari](img/safari-settings-screenshot.png)
 
 
       ### Step 4: Inspect and Debug Mobile Safari Tabs
@@ -130,11 +139,10 @@ blogPosts:
       Debugging websites with browser developer tools is a critical part of web development. Tools like **Chrome DevTools** and **Firefox Developer Tools** are widely used for testing and fixing issues on desktop and Android devices. But for iOS users, Safari is the default browser — which means knowing how to **inspect element on iPhone Safari** using a Mac is just as important.
 
 
-
       By combining **Chrome, Firefox, and Safari debugging**, you cover all major browsers and ensure your site looks great everywhere. With Safari’s Web Inspector, you can test responsive layouts, fix JavaScript errors, and optimize performance directly on iPhone and iPad — filling in the gap that desktop-only testing can’t cover.
 
 
-      ✅ Master all three — Chrome, Firefox, and Safari — and you’ll deliver a consistent, reliable, and polished web experience across every platform.
+      Master all three — Chrome, Firefox, and Safari — and you’ll deliver a consistent, reliable, and polished web experience across every platform.
     date: 09/25/2025
     category: how-to
 ---
