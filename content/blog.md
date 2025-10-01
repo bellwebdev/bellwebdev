@@ -17,7 +17,7 @@ blogPosts:
     date: 09/25/2025
     category: agency-life
   - featured: true
-    blogImage: img/first-blog-image.jpg
+    blogImage: img/iphone-plugged-in.jpg
     url: inspect-mobile-safari-on-mac
     title: How to Debug Websites on Mobile Safari Using macOS (Step-by-Step Guide)
     subtitle: Easily inspect, troubleshoot, and debug your website on iPhone and
@@ -102,6 +102,9 @@ blogPosts:
       4. Choose the tab you want to inspect.
 
 
+      ![Screenshot of connecting an iPhone using Develop in Safari toolbar](img/connected-iphone.png)
+
+
       The **Web Inspector window** will appear, showing:
 
 
@@ -128,6 +131,15 @@ blogPosts:
       3. **Monitor API calls and assets** for speed issues.
 
       4. **Experiment with design tweaks** before shipping updates.
+
+
+      Below is a screenshot showing how hovering over an HTML element in Safari Web Inspector on Mac highlights that same element live on your iPhone.
+
+
+      ![Screenshot of Safari dev tools html code](img/safari-iphone-dev-tools.png)
+
+
+      ![](img/iphone-screenshot.jpeg)
 
 
       This workflow saves tons of time compared to guessing or blindly pushing changes.
