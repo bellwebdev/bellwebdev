@@ -5,7 +5,10 @@ import formatDate from "@/utils/dateConversion";
 import styles from "./blogpage.module.scss";
 
 const BlogPage = ({ blogImage, date, title, subtitle, post }) => {
-  const updatePostImgSrc = post.replace("img", "/img");
+  const updatePostImgSrc = post.replaceAll("img", "/img");
+
+  console.log(blogImage);
+
   return (
     <>
       {" "}
@@ -25,7 +28,7 @@ const BlogPage = ({ blogImage, date, title, subtitle, post }) => {
       </div>
       <Container className={styles.blogContent}>
         <Row className="justify-content-center">
-          <Col lg={10}>
+          <Col lg={8}>
             <Markdown>{updatePostImgSrc}</Markdown>
           </Col>
         </Row>
