@@ -7,13 +7,55 @@ import {
   faPaintRoller,
   faUniversalAccess,
   faMagnifyingGlass,
-  faDollarSign,
+  faCheck,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { Col, Container, Row } from "react-bootstrap";
 import styles from "./services.module.scss";
 
 export default function Services() {
+  const tierData = [
+    {
+      tierLabel: "Tier 1 — Starter Site",
+      price: "Starting at $300",
+      description:
+        "A clean, fast, fully custom static website. Ideal for businesses that need a professional online presence — hours, services, contact info, photos — without ongoing complexity.",
+      features: [
+        "Up to 5 pages",
+        "Mobile-responsive design",
+        "Contact form",
+        "Basic SEO setup (proper titles, descriptions, local keywords)",
+        "Delivered in 1–2 weeks",
+      ],
+    },
+    {
+      tierLabel: "Tier 2 — Business Site",
+      price: "Starting at $800",
+      description:
+        "For businesses that need to manage their own content, sell online, or need more custom functionality.",
+      features: [
+        "CMS integration (edit your own content — no coding needed)",
+        "Booking/scheduling integration or basic e-commerce",
+        "Advanced SEO & Google Business Profile setup",
+        "Monthly Google Analytics reports",
+        "Delivered in 2–4 weeks",
+      ],
+    },
+    {
+      tierLabel: "Tier 3 — Custom Web Application",
+      price: "Starting at $2,500",
+      description:
+        "For businesses that need something built from scratch — a customer portal, internal tool, booking system, or full web app.",
+      features: [
+        "Custom-built to your exact workflow",
+        "Database & user account functionality",
+        "Ongoing support/maintenance available",
+        "Timeline scoped after initial consultation",
+      ],
+    },
+  ];
+
   const cardFlipData = [
     {
       cardHeading: "Custom Built Websites",
@@ -27,7 +69,7 @@ export default function Services() {
       cardHeading: "Content Management System",
       cardSubHead: "Giving you control over your content.",
       cardBack:
-        "Managing content efficiently is essential for staying competitive. We integrate a CMS to give you the power to update your content. Whether you're writing blog posts or just need to update a headline, our CMS solutions are built to help you manage and organize your content effortlessly.",
+        "Managing content efficiently is essential for staying competitive. I integrate a CMS to give you the power to update your content. Whether you're writing blog posts or just need to update a headline, my CMS solutions are built to help you manage and organize your content effortlessly.",
       faIcon: faFolder,
     },
     {
@@ -35,7 +77,7 @@ export default function Services() {
       cardSubHead:
         "Building inclusive websites that are accessible for all users.",
       cardBack:
-        "Ensure your website is accessible to everyone, including users with disabilities. We implement WCAG (Web Content Accessibility Guidelines) best practices to make your site compliant with ADA (Americans with Disabilities Act) standards, creating a more inclusive experience for all visitors.",
+        "Ensure your website is accessible to everyone, including users with disabilities. I implement WCAG (Web Content Accessibility Guidelines) best practices to make your site compliant with ADA (Americans with Disabilities Act) standards, creating a more inclusive experience for all visitors.",
       faIcon: faUniversalAccess,
     },
     {
@@ -43,21 +85,14 @@ export default function Services() {
       cardSubHead:
         "improve your search rankings and boost your online visibility.",
       cardBack:
-        "We work with you to create a comprehensive strategy that aligns with your business goals. We stay up to date with the latest search engine algorithms to ensure your website stays competitive.",
+        "I work with you to create a comprehensive strategy that aligns with your business goals, and stay up to date with the latest search engine algorithms to ensure your website stays competitive.",
       faIcon: faMagnifyingGlass,
-    },
-    {
-      cardHeading: "Pricing",
-      cardSubHead: "Flexible pricing suited to your business needs.",
-      cardBack:
-        "We tailor our affordable pricing packages based on what you want. We offer lump sum pricing or monthly subscription pricing to essentially have a web developer in your pocket. Send a message to get a quote!",
-      faIcon: faDollarSign,
     },
     {
       cardHeading: "Consultation & Maintenance",
       cardSubHead: "Gain insight to keep your website running smoothly.",
       cardBack:
-        "Websites need ongoing care to remain functional, secure, and up-to-date. We can provide insight on how to improve or fix issues with your current site. (Maintenance is included when we develop your site)",
+        "Websites need ongoing care to remain functional, secure, and up-to-date. I can provide insight on how to improve or fix issues with your current site. (Maintenance is included when I develop your site)",
       faIcon: faPaintRoller,
     },
   ];
@@ -67,33 +102,54 @@ export default function Services() {
         bgColor="darkBlueBg"
         btn={true}
         img="/projectImages/dual-monitor-mac.jpeg"
-        heading="Our Web Development Services"
-        subheading="Precision, Performance, and Accessibility"
+        heading="Services & Pricing"
+        subheading="Custom-coded sites and web apps, scoped and quoted for your business."
       />
       <Container className={`my-5 py-5`}>
         <Row className="justify-content-center text-center">
           <Col lg={8}>
-            <h2 className="mb-0">Crafted for Your Business.</h2>
-            <hr className="mt-3 mb-4"></hr>
-            <p>
-              We build custom websites, integrated with a content management
-              system, and provide end-to-end digital services—designed to grow
-              your business and enhance user experience.
+            <p className="mb-0">
+              Every project is different, so these are starting points, not
+              fixed prices. After a quick conversation about what you need,
+              I&apos;ll give you a straightforward quote — no surprise fees.
             </p>
           </Col>
+        </Row>
+      </Container>
+      <Container className="mb-5 pb-5">
+        <Row>
+          {tierData.map((tier, index) => (
+            <Col lg={4} className="mt-4 mt-lg-0 d-flex" key={index}>
+              <div className={styles.tierCard}>
+                <h3>{tier.tierLabel}</h3>
+                <p className={styles.tierPrice}>{tier.price}</p>
+                <p>{tier.description}</p>
+                <ul className={styles.tierFeatures}>
+                  {tier.features.map((feature, i) => (
+                    <li key={i}>
+                      <FontAwesomeIcon
+                        icon={faCheck}
+                        className={styles.tierCheck}
+                      />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Col>
+          ))}
         </Row>
       </Container>
       <div className="blueOpacityBg py-4">
         <Container className="py-5">
           <Row className="justify-content-center text-center mb-4">
             <Col md={8}>
-              <h2 className="text-center">What We Offer</h2>
+              <h2 className="text-center">What I Offer</h2>
               <hr className="mt-3 mb-4"></hr>
               <p>
-                Here are a variety of services we offer. We are dedicated to
-                improving our service, so please reach out to us if you
-                don&apos;t see what you&apos;re looking for. We may still be
-                able to do it for you!
+                Here&apos;s a closer look at what&apos;s included across
+                projects. Don&apos;t see what you&apos;re looking for? Reach
+                out — I may still be able to help.
               </p>
             </Col>
           </Row>

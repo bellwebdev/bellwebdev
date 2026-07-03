@@ -15,7 +15,7 @@ const HeroBanner = (props) => {
                 href={"#contactForm"}
                 className={`${hero.fullWidth} blueBg whiteText mb-3 mb-md-0`}
               >
-                Get Started
+                {props.btnText || "Get Started"}
               </ButtonLink>
             )}
           </Col>

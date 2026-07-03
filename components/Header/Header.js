@@ -23,6 +23,9 @@ const Header = () => {
               <Nav.Link className="darkBlueText" href="/services">
                 Services
               </Nav.Link>
+              <Nav.Link className="darkBlueText" href="/portfolio">
+                Portfolio
+              </Nav.Link>
               <Nav.Link disabled href="/blog">
                 Blog{" (Coming Soon)"}
               </Nav.Link>

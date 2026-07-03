@@ -27,6 +27,9 @@ const Footer = () => {
             <Link className="px-2" href="/services">
               Services
             </Link>
+            <Link className="px-2" href="/portfolio">
+              Portfolio
+            </Link>
             {/* <Link className="px-2" href="/blog">
               Blog
             </Link> */}
@@ -35,7 +38,7 @@ const Footer = () => {
         </Row>
         <Row className="justify-content-between align-items-center text-center">
           <Col className="text-sm-start">
-            <p className="mb-0">&copy; 2024 Bell WebDev</p>
+            <p className="mb-0">&copy; {new Date().getFullYear()} Bell WebDev</p>
           </Col>
           <Col className="text-sm-end">
             <FontAwesomeIcon icon={faLinkedinIn} width={20} className="mx-2" />

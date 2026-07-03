@@ -6,3 +6,37 @@
     margin: 0 auto;
   }
 }
+
+.tierCard {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 2px 2px 25px 0px #00000021;
+  padding: 2rem 1.5rem;
+  background-color: white;
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.tierPrice {
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.tierFeatures {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  li {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.tierCheck {
+  color: var(--turqoise);
+  margin-right: 0.5rem;
+}

@@ -141,11 +141,11 @@ const ContactForm = (props) => {
                   </Col>
                 </Row>
                 <Form.Group className="mb-4" controlId="message">
-                  <Form.Label>How can we help you? *</Form.Label>
+                  <Form.Label>How can I help you? *</Form.Label>
                   <Form.Control
                     as="textarea"
                     rows={3}
-                    placeholder="How can we help you?"
+                    placeholder="How can I help you?"
                     name="message"
                     onChange={handleChange}
                     required
@@ -156,7 +156,7 @@ const ContactForm = (props) => {
                   type="submit"
                   disabled={loading}
                 >
-                  Send Us a Message{" "}
+                  Send My Message{" "}
                   <span className={`ps-2 ${!loading && "visually-hidden"}`}>
                     <Loader />
                   </span>
@@ -168,8 +168,8 @@ const ContactForm = (props) => {
         {success && (
           <Row className="justify-content-center align-items-center py-5 text-center whiteText">
             <Col className="py-5 my-5">
-              <h2>Thank You for You Submission!</h2>
-              <p>We will reach out to you within the next 24-48 hours.</p>
+              <h2>Thank You for Your Submission!</h2>
+              <p>I&apos;ll get back to you within one business day.</p>
             </Col>
           </Row>
         )}
@@ -179,7 +179,7 @@ const ContactForm = (props) => {
               <h2>
                 Sorry about that. Your message cannot be sent at this time.
               </h2>
-              <p>Please try again later or send us a DM on social media.</p>
+              <p>Please try again later or send me a DM on social media.</p>
             </Col>
           </Row>
         )}
