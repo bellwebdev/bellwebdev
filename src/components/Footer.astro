@@ -1,0 +1,71 @@
+---
+import styles from "./Footer.module.scss";
+import { iconHtml } from "../utils/icon";
+import {
+  faLinkedinIn,
+  faFacebook,
+  faInstagram,
+  faXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+
+const year = new Date().getFullYear();
+
+// TODO: swap in real profile URLs
+const social = {
+  linkedin: "#",
+  facebook: "#",
+  instagram: "#",
+  x: "#",
+};
+---
+
+<footer class="darkBlueBg whiteText">
+  <div class="container py-4">
+    <div class="row justify-content-center align-items-center text-center">
+      <div class="col">
+        <img
+          src="/projectImages/BellWebDevPicWhite.png"
+          width="40"
+          height="40"
+          alt="Bell WebDev logo"
+        />
+        <a class="ps-3 pe-2" href="/about">About</a>
+        <a class="px-2" href="/services">Services</a>
+        <a class="px-2" href="/portfolio">Portfolio</a>
+        <a class="px-2" href="/blog">Blog</a>
+      </div>
+      <hr class="mt-2 turqoiseText" />
+    </div>
+    <div class="row justify-content-between align-items-center text-center">
+      <div class="col text-sm-start">
+        <p class="mb-0">&copy; {year} Bell WebDev</p>
+      </div>
+      <div class="col text-sm-end">
+        <a
+          href={social.linkedin}
+          class={`mx-2 ${styles.socialIcon}`}
+          aria-label="Bell WebDev on LinkedIn"
+          set:html={iconHtml(faLinkedinIn)}
+        />
+        <a
+          href={social.facebook}
+          class={`mx-2 ${styles.socialIcon}`}
+          aria-label="Bell WebDev on Facebook"
+          set:html={iconHtml(faFacebook)}
+        />
+        <a
+          href={social.instagram}
+          class={`mx-2 ${styles.socialIcon}`}
+          aria-label="Bell WebDev on Instagram"
+          set:html={iconHtml(faInstagram)}
+        />
+        <a
+          href={social.x}
+          class={`mx-2 ${styles.socialIcon}`}
+          aria-label="Bell WebDev on X"
+          set:html={iconHtml(faXTwitter)}
+        />
+      </div>
+    </div>
+  </div>
+</footer>

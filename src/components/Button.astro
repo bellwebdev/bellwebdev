@@ -1,0 +1,14 @@
+---
+import styles from "./Button.module.scss";
+
+const {
+  type = "button",
+  disabled = false,
+  id,
+  class: className = "",
+} = Astro.props;
+---
+
+<button type={type} id={id} class={`${styles.btn} ${className}`} disabled={disabled}>
+  <slot />
+</button>

@@ -1,0 +1,14 @@
+---
+import styles from "./Card.module.scss";
+
+const { imgSrc, imgAlt = "", iconHtml, cardHeader, cardText } = Astro.props;
+---
+
+<div class={styles.card}>
+  <div class={styles.iconBg}>
+    {imgSrc && <img src={imgSrc} alt={imgAlt} />}
+    {iconHtml && <Fragment set:html={iconHtml} />}
+  </div>
+  <h3>{cardHeader}</h3>
+  <p>{cardText}</p>
+</div>

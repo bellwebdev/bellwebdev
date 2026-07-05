@@ -1,0 +1,31 @@
+---
+import { render } from "astro:content";
+import formatDate from "../utils/formatDate";
+import styles from "./BlogPost.module.scss";
+
+const { entry } = Astro.props;
+const { title, subtitle, date, blogImage } = entry.data;
+const { Content } = await render(entry);
+---
+
+<div class={styles.blogHero}>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <p class={styles.date}>{formatDate(date)}</p>
+        <h1>{title}</h1>
+        <p>{subtitle}</p>
+      </div>
+      <div class="col-lg-6">
+        <img class="img-fluid" src={blogImage} alt={title} />
+      </div>
+    </div>
+  </div>
+</div>
+<div class={`container ${styles.blogContent}`}>
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <Content />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BlogPost from "../../components/BlogPost.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { title, subtitle } = entry.data;
+---
+
+<Layout title={`${title} | Bell WebDev Blog`} description={subtitle}>
+  <main>
+    <BlogPost entry={entry} />
+  </main>
+</Layout>

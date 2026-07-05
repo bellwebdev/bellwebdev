@@ -1,0 +1,50 @@
+---
+import styles from "./CardFlip.module.scss";
+import { iconHtml } from "../utils/icon";
+
+const { faIcon, cardHeading, cardSubHead, cardBack } = Astro.props;
+---
+
+<div
+  class={styles.flipCard}
+  data-flip-card
+  role="button"
+  tabindex="0"
+  aria-pressed="false"
+>
+  <div class={styles.flipCardInner} data-flip-target data-flipped-class={styles.flipThatCard}>
+    <div class={styles.flipCardFront}>
+      <div>
+        <div class={styles.cardTopIcon}>
+          <Fragment set:html={iconHtml(faIcon)} />
+        </div>
+        <h3>{cardHeading}</h3>
+        <p>{cardSubHead}</p>
+      </div>
+      <div>
+        <span>Flip to Learn More</span>
+      </div>
+    </div>
+    <div class={styles.flipCardBack}>
+      <p class="mb-0">{cardBack}</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll("[data-flip-card]").forEach((card) => {
+    const inner = card.querySelector("[data-flip-target]");
+    const flippedClass = inner.dataset.flippedClass;
+    const toggle = () => {
+      const flipped = inner.classList.toggle(flippedClass);
+      card.setAttribute("aria-pressed", String(flipped));
+    };
+    card.addEventListener("click", toggle);
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggle();
+      }
+    });
+  });
+</script>

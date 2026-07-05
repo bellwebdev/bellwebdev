@@ -1,0 +1,30 @@
+---
+import ButtonLink from "./ButtonLink.astro";
+import styles from "./HeroBanner.module.scss";
+
+const { bgColor, btn, btnText, img, imgAlt = "", heading, subheading } = Astro.props;
+---
+
+<div class={`${styles.heroBanner} ${bgColor} whiteText`}>
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-6">
+        <h1>{heading}</h1>
+        <p class="my-3">{subheading}</p>
+        {
+          btn && (
+            <ButtonLink
+              href="#contactForm"
+              class={`${styles.fullWidth} blueBg whiteText mb-3 mb-md-0`}
+            >
+              {btnText || "Get Started"}
+            </ButtonLink>
+          )
+        }
+      </div>
+      <div class="col-12 col-lg-6 text-md-end">
+        <img src={img} alt={imgAlt} />
+      </div>
+    </div>
+  </div>
+</div>

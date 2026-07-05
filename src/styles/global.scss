@@ -1,0 +1,79 @@
+@use "variables" as *;
+@use "grid";
+@use "utilities";
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+// The .row/.col-* utility classes set their own `display`, which otherwise
+// beats the browser's default [hidden] rule (same specificity, author
+// stylesheet wins) — this keeps the hidden attribute authoritative so
+// toggling it in JS (e.g. ContactForm's success/error states) actually works.
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  font-family: "Rubik", sans-serif !important;
+}
+
+/* Background Styles */
+.darkBlueBg {
+  background-color: var(--dark-blue);
+}
+
+.blueBg {
+  background-color: var(--blue);
+}
+
+.lightBlueBg {
+  background-color: var(--lightBlue);
+}
+
+.turqoiseBg {
+  background-color: var(--turqoise);
+}
+
+.blueOpacityBg {
+  background-color: rgba(64, 105, 178, 0.13);
+}
+
+/* END Background Styles */
+
+/* Font Styles */
+.darkBlueText {
+  color: var(--dark-blue) !important;
+}
+
+.blueText {
+  color: var(--blue);
+}
+
+.lightBlueText {
+  color: var(--lightBlue);
+}
+
+.turqoiseText {
+  color: var(--turqoise);
+}
+
+.whiteText {
+  color: white;
+}
+
+/* END Font Styles */
+
+/* Custom Global Styles */
+.img-rounded {
+  border-radius: 8px;
+}
+
+/* Footer Styles */
+footer a {
+  text-decoration: none;
+  color: white;
+}
