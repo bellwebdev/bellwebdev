@@ -1,0 +1,9 @@
+---
+import styles from "./GhostButton.module.scss";
+
+const { href, class: className = "" } = Astro.props;
+---
+
+<a href={href} class={`${styles.btn} ${className}`}>
+  <slot />
+</a>

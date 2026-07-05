@@ -1,0 +1,10 @@
+---
+import styles from "./Tile.module.scss";
+
+const { imgSrc, imgAlt = "", cardText } = Astro.props;
+---
+
+<div class={styles.tile}>
+  <img src={imgSrc} alt={imgAlt} />
+  <span>{cardText}</span>
+</div>

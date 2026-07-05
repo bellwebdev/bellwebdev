@@ -1,0 +1,64 @@
+@use "sass:math";
+@use "variables" as *;
+
+// Minimal hand-rolled grid replacing react-bootstrap's Container/Row/Col,
+// sized to only the breakpoints/columns this site actually uses (md + lg).
+// Mobile-first: every .col-* is full width until its own breakpoint kicks in,
+// and a later (larger) breakpoint's width wins at that viewport per normal
+// CSS cascade order, matching how Bootstrap's own responsive columns stack.
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 0.75rem;
+
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+  @media (min-width: $breakpoint-md) {
+    max-width: 720px;
+  }
+  @media (min-width: $breakpoint-lg) {
+    max-width: 960px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: -0.75rem;
+}
+
+.col,
+[class^="col-"] {
+  padding-inline: 0.75rem;
+  width: 100%;
+}
+
+.col {
+  flex: 1 0 0%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+@media (min-width: $breakpoint-md) {
+  @each $n in 6, 8 {
+    .col-md-#{$n} {
+      width: math.percentage(math.div($n, 12));
+      flex: 0 0 auto;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  @each $n in 4, 5, 6, 8, 9, 10 {
+    .col-lg-#{$n} {
+      width: math.percentage(math.div($n, 12));
+      flex: 0 0 auto;
+    }
+  }
+}

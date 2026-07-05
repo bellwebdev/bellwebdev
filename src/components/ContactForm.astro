@@ -1,0 +1,113 @@
+---
+import Button from "./Button.astro";
+import Loader from "./Loader.astro";
+import styles from "./ContactForm.module.scss";
+
+const { formHeading, formSubhead } = Astro.props;
+---
+
+<div class={`turqoiseBg ${styles.bRadius}`} id="contactForm" data-contact-form>
+  <div class="container">
+    <form class={styles.form} novalidate>
+      <div class="row justify-content-between align-items-center px-4">
+        <div class="col-12 col-lg-5 text-center">
+          <img class="img-fluid mb-3" src="/projectImages/bitmoji.png" alt="" />
+          <h2>{formHeading}</h2>
+          <p>{formSubhead}</p>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <div class="mb-4">
+                <label for="fname">First Name *</label>
+                <input type="text" id="fname" name="fname" placeholder="Enter first name" required />
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="mb-4">
+                <label for="lname">Last Name *</label>
+                <input type="text" id="lname" name="lname" placeholder="Enter last name" required />
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="mb-4">
+                <label for="email">Email address *</label>
+                <input type="email" id="email" name="email" placeholder="Enter email" required />
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="mb-4">
+                <label for="company">Company or Business</label>
+                <input type="text" id="company" name="company" placeholder="Enter company name" />
+              </div>
+            </div>
+          </div>
+          <div class="mb-4">
+            <label for="message">How can I help you? *</label>
+            <textarea id="message" name="message" rows="3" placeholder="How can I help you?" required
+            ></textarea>
+          </div>
+          <Button type="submit" class="blueBg whiteText">
+            Send My Message
+            <span class="ps-2" data-loader hidden>
+              <Loader />
+            </span>
+          </Button>
+        </div>
+      </div>
+    </form>
+    <div class="row justify-content-center align-items-center py-5 text-center whiteText" data-contact-success hidden>
+      <div class="col py-5 my-5">
+        <h2>Thank You for Your Submission!</h2>
+        <p>I'll get back to you within one business day.</p>
+      </div>
+    </div>
+    <div class="row justify-content-center align-items-center py-5 text-center whiteText" data-contact-error hidden>
+      <div class="col py-5 my-5">
+        <h2>Sorry about that. Your message cannot be sent at this time.</h2>
+        <p>Please try again later or send me a DM on social media.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll("[data-contact-form]").forEach((wrapper) => {
+    const form = wrapper.querySelector("form");
+    const successEl = wrapper.querySelector("[data-contact-success]");
+    const errorEl = wrapper.querySelector("[data-contact-error]");
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const loader = submitBtn.querySelector("[data-loader]");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      loader.hidden = false;
+
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      try {
+        const res = await fetch("/.netlify/functions/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+        if (!res.ok) throw new Error("Failed to send message");
+        form.hidden = true;
+        successEl.hidden = false;
+      } catch (error) {
+        form.hidden = true;
+        errorEl.hidden = false;
+      } finally {
+        submitBtn.disabled = false;
+        loader.hidden = true;
+      }
+    });
+  });
+</script>

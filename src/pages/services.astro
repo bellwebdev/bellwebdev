@@ -1,0 +1,183 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroBanner from "../components/HeroBanner.astro";
+import ContactForm from "../components/ContactForm.astro";
+import CardFlip from "../components/CardFlip.astro";
+import { iconHtml } from "../utils/icon";
+import {
+  faFolder,
+  faHammer,
+  faPaintRoller,
+  faUniversalAccess,
+  faMagnifyingGlass,
+  faCheck,
+} from "@fortawesome/free-solid-svg-icons";
+import styles from "./services.module.scss";
+
+const tierData = [
+  {
+    tierLabel: "Tier 1 — Starter Site",
+    price: "Starting at $300",
+    description:
+      "A clean, fast, fully custom static website. Ideal for businesses that need a professional online presence — hours, services, contact info, photos — without ongoing complexity.",
+    features: [
+      "Up to 5 pages",
+      "Mobile-responsive design",
+      "Contact form",
+      "Basic SEO setup (proper titles, descriptions, local keywords)",
+      "Delivered in 1–2 weeks",
+    ],
+  },
+  {
+    tierLabel: "Tier 2 — Business Site",
+    price: "Starting at $800",
+    description:
+      "For businesses that need to manage their own content, sell online, or need more custom functionality.",
+    features: [
+      "CMS integration (edit your own content — no coding needed)",
+      "Booking/scheduling integration or basic e-commerce",
+      "Advanced SEO & Google Business Profile setup",
+      "Monthly Google Analytics reports",
+      "Delivered in 2–4 weeks",
+    ],
+  },
+  {
+    tierLabel: "Tier 3 — Custom Web Application",
+    price: "Starting at $2,500",
+    description:
+      "For businesses that need something built from scratch — a customer portal, internal tool, booking system, or full web app.",
+    features: [
+      "Custom-built to your exact workflow",
+      "Database & user account functionality",
+      "Ongoing support/maintenance available",
+      "Timeline scoped after initial consultation",
+    ],
+  },
+];
+
+const cardFlipData = [
+  {
+    cardHeading: "Custom Built Websites",
+    cardSubHead:
+      "Offering more flexibility than your average drag and drop editors.",
+    cardBack:
+      "A custom-built website offers greater flexibility and scalability, allowing for tailored design, functionality, and performance that align with specific business goals. Unlike drag-and-drop sites, which often limit customization, a custom site ensures better control over user experience, security, and long-term growth.",
+    faIcon: faHammer,
+  },
+  {
+    cardHeading: "Content Management System",
+    cardSubHead: "Giving you control over your content.",
+    cardBack:
+      "Managing content efficiently is essential for staying competitive. I integrate a CMS to give you the power to update your content. Whether you're writing blog posts or just need to update a headline, my CMS solutions are built to help you manage and organize your content effortlessly.",
+    faIcon: faFolder,
+  },
+  {
+    cardHeading: "ADA Compliance",
+    cardSubHead:
+      "Building inclusive websites that are accessible for all users.",
+    cardBack:
+      "Ensure your website is accessible to everyone, including users with disabilities. I implement WCAG (Web Content Accessibility Guidelines) best practices to make your site compliant with ADA (Americans with Disabilities Act) standards, creating a more inclusive experience for all visitors.",
+    faIcon: faUniversalAccess,
+  },
+  {
+    cardHeading: "Search Engine Optimization (SEO)",
+    cardSubHead:
+      "improve your search rankings and boost your online visibility.",
+    cardBack:
+      "I work with you to create a comprehensive strategy that aligns with your business goals, and stay up to date with the latest search engine algorithms to ensure your website stays competitive.",
+    faIcon: faMagnifyingGlass,
+  },
+  {
+    cardHeading: "Consultation & Maintenance",
+    cardSubHead: "Gain insight to keep your website running smoothly.",
+    cardBack:
+      "Websites need ongoing care to remain functional, secure, and up-to-date. I can provide insight on how to improve or fix issues with your current site. (Maintenance is included when I develop your site)",
+    faIcon: faPaintRoller,
+  },
+];
+---
+
+<Layout
+  title="Web Development Services & Pricing | Bell WebDev"
+  description="Custom-coded sites and web apps, scoped and quoted for your business — from a $300 starter site to a fully custom web application."
+>
+  <main class={styles.services}>
+    <HeroBanner
+      bgColor="darkBlueBg"
+      btn={true}
+      img="/projectImages/dual-monitor-mac.jpeg"
+      imgAlt="Dual monitor development setup"
+      heading="Services & Pricing"
+      subheading="Custom-coded sites and web apps, scoped and quoted for your business."
+    />
+    <div class="container my-5 py-5">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <p class="mb-0">
+            Every project is different, so these are starting points, not
+            fixed prices. After a quick conversation about what you need,
+            I'll give you a straightforward quote — no surprise fees.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container mb-5 pb-5">
+      <div class="row">
+        {
+          tierData.map((tier) => (
+            <div class="col-lg-4 mt-4 mt-lg-0 d-flex">
+              <div class={styles.tierCard}>
+                <h3>{tier.tierLabel}</h3>
+                <p class={styles.tierPrice}>{tier.price}</p>
+                <p>{tier.description}</p>
+                <ul class={styles.tierFeatures}>
+                  {tier.features.map((feature) => (
+                    <li>
+                      <Fragment set:html={iconHtml(faCheck, styles.tierCheck)} />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="blueOpacityBg py-4">
+      <div class="container py-5">
+        <div class="row justify-content-center text-center mb-4">
+          <div class="col-md-8">
+            <h2 class="text-center">What I Offer</h2>
+            <hr class="mt-3 mb-4" />
+            <p>
+              Here's a closer look at what's included across projects. Don't
+              see what you're looking for? Reach out — I may still be able to
+              help.
+            </p>
+          </div>
+        </div>
+        <div class="row align-items-center">
+          {
+            cardFlipData.map((item) => (
+              <div class="col-md-6 col-lg-4">
+                <CardFlip
+                  faIcon={item.faIcon}
+                  cardHeading={item.cardHeading}
+                  cardSubHead={item.cardSubHead}
+                  cardBack={item.cardBack}
+                />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <div class="container my-5 py-5">
+      <ContactForm
+        formHeading="Ready to build something exceptional?"
+        formSubhead="Get in touch to start your project today!"
+      />
+    </div>
+  </main>
+</Layout>

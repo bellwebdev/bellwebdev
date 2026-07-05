@@ -1,0 +1,47 @@
+---
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import "../styles/global.scss";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const {
+  title = "Bell WebDev | Custom Web Development in the Lehigh Valley, PA",
+  description = "Fast, custom-coded websites and web apps for Lehigh Valley businesses — built by a developer with 5 years of professional web engineering experience.",
+} = Astro.props;
+
+const GA_ID = "G-PHHHDM8CE8";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {
+      import.meta.env.PROD && (
+        <>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          />
+          <script
+            is:inline
+            data-ga-id={GA_ID}
+            set:html={`window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_ID}');`}
+          />
+        </>
+      )
+    }
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,73 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroBanner from "../components/HeroBanner.astro";
+import ContactForm from "../components/ContactForm.astro";
+import styles from "./portfolio.module.scss";
+---
+
+<Layout
+  title="Portfolio | Bell WebDev"
+  description="Real projects in active development from Bell WebDev — not a static portfolio."
+>
+  <main>
+    <HeroBanner
+      bgColor="darkBlueBg"
+      btn={true}
+      img="/projectImages/Laptop-CSS-Code.jpg"
+      imgAlt="Laptop displaying CSS code"
+      heading="Currently Building"
+      subheading="Real projects in active development — not a static portfolio."
+    />
+    <div class={`container my-5 py-5 ${styles.portfolio}`}>
+      <div class="row justify-content-center text-center mb-4">
+        <div class="col-lg-8">
+          <p class="mb-0">
+            Here's what I'm actively working on right now, alongside my
+            full-time engineering work.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 mt-4 mt-lg-0 d-flex">
+          <div class={styles.projectCard}>
+            <span class={styles.tag}>In Development</span>
+            <h3>Community Networking App</h3>
+            <p>
+              A platform for connecting people with shared interests in their
+              local area — built to help communities organize and stay in
+              touch.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 mt-4 mt-lg-0 d-flex">
+          <div class={styles.projectCard}>
+            <span class={styles.tag}>
+              Early Development — Pending Partnership
+            </span>
+            <h3>Solar Sales Field App</h3>
+            <p>
+              Working with a partner to build a tool for solar sales reps to
+              manage door-to-door lead tracking and scheduling in the field.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 mt-4 mt-lg-0 d-flex">
+          <div class={styles.projectCard}>
+            <span class={styles.tag}>Background</span>
+            <h3>5 Years of Professional Engineering</h3>
+            <p>
+              Before freelancing, I built and maintained production web
+              software for a mid-size company for 5 years.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container my-5 py-5">
+      <ContactForm
+        formHeading="Have a project in mind?"
+        formSubhead="Tell me a bit about your project and I'll get back to you within one business day."
+      />
+    </div>
+  </main>
+</Layout>

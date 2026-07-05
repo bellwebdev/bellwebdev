@@ -1,0 +1,8 @@
+.socialIcon {
+  display: inline-flex;
+
+  :global(svg) {
+    width: 20px !important;
+    height: 20px;
+  }
+}

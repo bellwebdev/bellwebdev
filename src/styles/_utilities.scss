@@ -1,0 +1,112 @@
+@use "variables" as *;
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-sm-start {
+  text-align: left;
+}
+
+@media (min-width: $breakpoint-md) {
+  .text-md-end {
+    text-align: right;
+  }
+}
+
+@media (min-width: 576px) {
+  .text-sm-end {
+    text-align: right;
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+// Spacing scale matches the values actually used across the site
+// (Bootstrap's 0/1/0.25rem/2/0.5rem/3/1rem/4/1.5rem/5/3rem scale).
+$spacers: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 1.5rem,
+  5: 3rem,
+);
+
+@each $key, $value in $spacers {
+  .mt-#{$key} {
+    margin-top: $value;
+  }
+  .mb-#{$key} {
+    margin-bottom: $value;
+  }
+  .my-#{$key} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+  .mx-#{$key} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+  .ps-#{$key} {
+    padding-left: $value;
+  }
+  .pe-#{$key} {
+    padding-right: $value;
+  }
+  .px-#{$key} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+  .py-#{$key} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}
+
+.me-auto {
+  margin-right: auto;
+}
+
+@media (min-width: $breakpoint-md) {
+  .mb-md-0 {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .mt-lg-0 {
+    margin-top: 0;
+  }
+}

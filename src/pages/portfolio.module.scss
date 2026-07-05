@@ -1,0 +1,35 @@
+.portfolio {
+  hr {
+    border: 1px solid var(--blue);
+    opacity: 1;
+    width: 30%;
+    margin: 0 auto;
+  }
+}
+
+.projectCard {
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 2px 2px 25px 0px #00000021;
+  padding: 1.75rem 1.5rem;
+  background-color: white;
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 0.25rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--turqoise);
+  margin-bottom: 0.5rem;
+}
