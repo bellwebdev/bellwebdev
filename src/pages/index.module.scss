@@ -1,11 +1,62 @@
+@use "../styles/variables" as *;
+
 .services {
-  hr {
-    border: 1px solid var(--blue);
-    opacity: 1;
-    width: 30%;
-    margin: 0 auto;
-  }
   a {
     color: var(--dark-blue);
   }
+}
+
+.lastText {
+  margin-bottom: 0;
+}
+
+.headingRow {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.headingRowTight {
+  margin-bottom: 1rem;
+}
+
+.headingRowWide {
+  margin-bottom: 1.5rem;
+}
+
+.headingCol {
+  width: 100%;
+
+  @media (min-width: $breakpoint-lg) {
+    flex: 0 0 66.6667%;
+    width: 66.6667%;
+  }
+}
+
+.cardsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cardCol {
+  width: 100%;
+  @media (min-width: $breakpoint-lg) {
+    flex: 1;
+    margin-top: 0;
+  }
+}
+
+.ctaRow {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.ctaLinkWrap {
+  width: 100%;
+}
+
+.arrowIcon {
+  padding-left: 0.25rem;
 }

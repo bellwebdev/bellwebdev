@@ -4,13 +4,19 @@
   border-radius: 5px;
   font-size: 1rem;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
   cursor: pointer;
-  text-align: center;
+  justify-content: center;
+  color: white !important;
+  width: 100%;
+
+  @media (min-width: 992px) {
+    width: fit-content;
+  }
 }
 
 .btn:hover {
-  background-color: white;
-  color: var(--blue);
-  outline: 2px solid var(--blue);
+  background-color: color-mix(in srgb, var(--turqoise), white 60%);
+  color: var(--dark-blue);
+  outline: 1px solid var(--dark-blue);
 }

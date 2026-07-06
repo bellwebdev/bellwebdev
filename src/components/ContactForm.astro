@@ -6,64 +6,64 @@ import styles from "./ContactForm.module.scss";
 const { formHeading, formSubhead } = Astro.props;
 ---
 
-<div class={`turqoiseBg ${styles.bRadius}`} id="contactForm" data-contact-form>
+<div class={`darkBlueBg ${styles.bRadius}`} id="contactForm" data-contact-form>
   <div class="container">
     <form class={styles.form} novalidate>
-      <div class="row justify-content-between align-items-center px-4">
-        <div class="col-12 col-lg-5 text-center">
-          <img class="img-fluid mb-3" src="/projectImages/bitmoji.png" alt="" />
+      <div class={styles.formRow}>
+        <div class={styles.introCol}>
+          <img class={styles.bitmoji} src="/projectImages/bitmoji.png" alt="" />
           <h2>{formHeading}</h2>
           <p>{formSubhead}</p>
         </div>
-        <div class="col-12 col-lg-6">
-          <div class="row">
-            <div class="col-12 col-lg-6">
-              <div class="mb-4">
+        <div class={styles.fieldsCol}>
+          <div class={styles.fieldsGrid}>
+            <div class={styles.fieldsHalf}>
+              <div class={styles.field}>
                 <label for="fname">First Name *</label>
                 <input type="text" id="fname" name="fname" placeholder="Enter first name" required />
               </div>
             </div>
-            <div class="col-12 col-lg-6">
-              <div class="mb-4">
+            <div class={styles.fieldsHalf}>
+              <div class={styles.field}>
                 <label for="lname">Last Name *</label>
                 <input type="text" id="lname" name="lname" placeholder="Enter last name" required />
               </div>
             </div>
-            <div class="col-12 col-lg-6">
-              <div class="mb-4">
+            <div class={styles.fieldsHalf}>
+              <div class={styles.field}>
                 <label for="email">Email address *</label>
                 <input type="email" id="email" name="email" placeholder="Enter email" required />
               </div>
             </div>
-            <div class="col-12 col-lg-6">
-              <div class="mb-4">
+            <div class={styles.fieldsHalf}>
+              <div class={styles.field}>
                 <label for="company">Company or Business</label>
                 <input type="text" id="company" name="company" placeholder="Enter company name" />
               </div>
             </div>
           </div>
-          <div class="mb-4">
+          <div class={styles.field}>
             <label for="message">How can I help you? *</label>
             <textarea id="message" name="message" rows="3" placeholder="How can I help you?" required
             ></textarea>
           </div>
-          <Button type="submit" class="blueBg whiteText">
+          <Button type="submit">
             Send My Message
-            <span class="ps-2" data-loader hidden>
+            <span class={styles.loaderWrap} data-loader hidden>
               <Loader />
             </span>
           </Button>
         </div>
       </div>
     </form>
-    <div class="row justify-content-center align-items-center py-5 text-center whiteText" data-contact-success hidden>
-      <div class="col py-5 my-5">
+    <div class={`whiteText ${styles.statusRow}`} data-contact-success hidden>
+      <div class={styles.statusCol}>
         <h2>Thank You for Your Submission!</h2>
         <p>I'll get back to you within one business day.</p>
       </div>
     </div>
-    <div class="row justify-content-center align-items-center py-5 text-center whiteText" data-contact-error hidden>
-      <div class="col py-5 my-5">
+    <div class={`whiteText ${styles.statusRow}`} data-contact-error hidden>
+      <div class={styles.statusCol}>
         <h2>Sorry about that. Your message cannot be sent at this time.</h2>
         <p>Please try again later or send me a DM on social media.</p>
       </div>

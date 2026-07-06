@@ -1,0 +1,12 @@
+---
+import styles from './TwoColumn.module.scss';
+---
+
+<div class={styles.twoColumn}>
+	<div class={styles.column}>
+		<slot name="left" />
+	</div>
+	<div class={styles.column}>
+		<slot name="right" />
+	</div>
+</div>

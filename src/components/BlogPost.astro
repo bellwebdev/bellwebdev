@@ -10,21 +10,21 @@ const { Content } = await render(entry);
 
 <div class={styles.blogHero}>
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
+    <div class={styles.heroRow}>
+      <div class={styles.heroText}>
         <p class={styles.date}>{formatDate(date)}</p>
         <h1>{title}</h1>
         <p>{subtitle}</p>
       </div>
-      <div class="col-lg-6">
-        <img class="img-fluid" src={blogImage} alt={title} />
+      <div class={styles.heroImage}>
+        <img src={blogImage} alt={title} />
       </div>
     </div>
   </div>
 </div>
 <div class={`container ${styles.blogContent}`}>
-  <div class="row justify-content-center">
-    <div class="col-lg-8">
+  <div class={styles.contentRow}>
+    <div class={styles.contentCol}>
       <Content />
     </div>
   </div>

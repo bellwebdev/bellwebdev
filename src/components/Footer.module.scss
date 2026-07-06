@@ -1,5 +1,61 @@
+.footerInner {
+  padding-block: 1.5rem;
+}
+
+.topRow,
+.bottomRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.bottomRow {
+  justify-content: space-between;
+}
+
+.navCol {
+  display: flex;
+  align-items: center;
+}
+
+.navLinkFirst {
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+}
+
+.navLink {
+  padding-inline: 0.5rem;
+}
+
+.divider {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.copyCol,
+.socialCol {
+  flex: 1 0 0%;
+}
+
+.copyText {
+  margin-bottom: 0;
+}
+
+@media (min-width: 576px) {
+  .copyCol {
+    text-align: left;
+  }
+
+  .socialCol {
+    text-align: right;
+  }
+}
+
 .socialIcon {
   display: inline-flex;
+  margin-inline: 0.5rem;
 
   :global(svg) {
     width: 20px !important;

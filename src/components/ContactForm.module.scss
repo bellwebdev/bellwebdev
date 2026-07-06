@@ -1,11 +1,8 @@
-.form {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  color: white;
+@use "../styles/variables" as *;
 
-  img {
-    max-width: 210px;
-  }
+.form {
+  padding: 2rem;
+  color: white;
 
   label {
     display: block;
@@ -50,4 +47,74 @@
 
 .bRadius {
   border-radius: 1rem;
+}
+
+.formRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.introCol {
+  width: 100%;
+  text-align: center;
+
+  @media (min-width: $breakpoint-lg) {
+    flex: 0 0 41.6667%;
+    width: 41.6667%;
+  }
+}
+
+.bitmoji {
+  max-width: 210px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.fieldsCol {
+  width: 100%;
+
+  @media (min-width: $breakpoint-lg) {
+    flex: 1;
+    width: 50%;
+  }
+}
+
+.fieldsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.fieldsHalf {
+  width: 100%;
+
+  @media (min-width: $breakpoint-lg) {
+    width: calc(50% - 16px);
+  }
+}
+
+.field {
+  margin-bottom: 1.5rem;
+}
+
+.loaderWrap {
+  padding-left: 0.5rem;
+}
+
+.statusRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 3rem;
+  text-align: center;
+  color: white;
+}
+
+.statusCol {
+  padding-block: 3rem;
+  margin-block: 3rem;
 }

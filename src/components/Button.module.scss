@@ -4,12 +4,14 @@
   border-radius: 5px;
   font-size: 1rem;
   text-align: center;
+  cursor: pointer;
+  background-color: color-mix(in srgb, var(--lightBlue), white 60%);
+  color: var(--dark-blue);
+  outline: 1px solid var(--dark-blue);
 }
 
 .btn:hover {
-  background-color: white;
-  color: var(--blue);
-  outline: 2px solid var(--blue);
+  background-color: color-mix(in srgb, var(--turqoise), white 60%);
 }
 
 .btn:disabled {

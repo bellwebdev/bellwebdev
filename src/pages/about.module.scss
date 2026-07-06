@@ -1,3 +1,5 @@
+@use "../styles/variables" as *;
+
 .about {
   hr {
     border: 1px solid var(--blue);
@@ -5,6 +7,41 @@
     width: 30%;
     margin: 0 auto;
   }
+}
+
+.introRow {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.introCol {
+  width: 100%;
+
+  @media (min-width: $breakpoint-lg) {
+    flex: 0 0 75%;
+    width: 75%;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.aboutBg {
+  padding-block: 3rem;
+}
+
+.aboutInner {
+  padding-block: 3rem;
+}
+
+.lastText {
+  margin-bottom: 0;
+}
+
+.locationHeading {
+  margin-top: 3rem;
 }
 
 .workList {

@@ -1,30 +1,31 @@
 ---
 import ButtonLink from "./ButtonLink.astro";
+import TwoColumn from "../layouts/TwoColumn/TwoColumn.astro";
 import styles from "./HeroBanner.module.scss";
 
-const { bgColor, btn, btnText, img, imgAlt = "", heading, subheading } = Astro.props;
+const { btn, btnText, img, imgAlt = "", heading, subheading } = Astro.props;
 ---
 
-<div class={`${styles.heroBanner} ${bgColor} whiteText`}>
-  <div class="container py-5">
-    <div class="row align-items-center">
-      <div class="col-12 col-lg-6">
+<div class={`${styles.heroBanner} whiteText`}>
+  <div class="container">
+    <TwoColumn>
+      <Fragment slot="left">
         <h1>{heading}</h1>
-        <p class="my-3">{subheading}</p>
+        <p class={styles.subheading}>{subheading}</p>
         {
           btn && (
             <ButtonLink
               href="#contactForm"
-              class={`${styles.fullWidth} blueBg whiteText mb-3 mb-md-0`}
+              class={`${styles.fullWidth} ${styles.cta} blueBg whiteText`}
             >
               {btnText || "Get Started"}
             </ButtonLink>
           )
         }
-      </div>
-      <div class="col-12 col-lg-6 text-md-end">
-        <img src={img} alt={imgAlt} />
-      </div>
-    </div>
+      </Fragment>
+      <Fragment slot="right">
+          <img class="alignImageMobile maxImageSize" src={img} alt={imgAlt} />
+      </Fragment>
+    </TwoColumn>
   </div>
 </div>
