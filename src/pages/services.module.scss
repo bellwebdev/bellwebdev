@@ -1,9 +1,51 @@
-.services {
-  hr {
-    border: 1px solid var(--blue);
-    opacity: 1;
-    width: 30%;
-    margin: 0 auto;
+@use "../styles/variables" as *;
+
+.introRow {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.introCol {
+  width: 100%;
+
+  @media (min-width: $breakpoint-lg) {
+    flex: 0 0 66.6667%;
+    width: 66.6667%;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.tiersSection {
+  .tierSubHead {
+    text-align: center;
+    width: 768px;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+}
+
+.tiersRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  @media (min-width: 992px) {
+    gap: 24px;
+  }
+}
+
+.tierCol {
+  display: flex;
+  width: 100%;
+  margin-top: 1.5rem;
+
+  @media (min-width: $breakpoint-lg) {
+    flex: 1 1 0;
+    margin-top: 0;
   }
 }
 
@@ -13,11 +55,6 @@
   box-shadow: 2px 2px 25px 0px #00000021;
   padding: 2rem 1.5rem;
   background-color: white;
-
-  h3 {
-    font-size: 20px;
-    margin-bottom: 0.5rem;
-  }
 }
 
 .tierPrice {
@@ -39,4 +76,56 @@
 .tierCheck {
   color: var(--turqoise);
   margin-right: 0.5rem;
+}
+
+.offerBg {
+  padding-block: 1.5rem;
+}
+
+.offerInner {
+  padding-block: 3rem;
+}
+
+.offerHeadingRow {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.offerHeadingCol {
+  width: 100%;
+
+  @media (min-width: $breakpoint-md) {
+    flex: 0 0 66.6667%;
+    width: 66.6667%;
+  }
+}
+
+.offerHeading {
+  text-align: center;
+}
+
+.cardFlipRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.cardFlipCol {
+  width: 100%;
+
+  @media (min-width: $breakpoint-md) {
+    flex: 1 1 calc((100% - 32px) / 2);
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    flex: 1 1 calc((100% - 32px) / 3);
+  }
+}
+
+.finalSection {
+  margin-block: 3rem;
+  padding-block: 3rem;
 }

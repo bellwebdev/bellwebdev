@@ -23,77 +23,78 @@ const sections = [
   description="Tutorials, project highlights, and agency updates from Bell WebDev."
 >
   <main>
-    <HeroBanner
-      bgColor="darkBlueBg"
-      btn={true}
-      img="/projectImages/blog-home.jpg"
-      imgAlt="Bell WebDev blog"
-      heading="Insights & Inspiration from the Frontlines of Web Development"
-      subheading="Explore expert tips, project highlights, and agency updates designed to help you build smarter, faster, and better digital experiences."
-    />
-    <div class={`container my-5 py-5 ${styles.blogHome}`}>
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <h2 class="text-center">
-            Behind-the-scenes looks at how our team solves real-world web
-            challenges.
-          </h2>
-          <hr class="mb-5" />
-        </div>
-      </div>
-      {
-        sections.length > 1 && (
-          <div
-            class={styles.sectionNav}
-            role="tablist"
-            aria-label="Blog categories"
-          >
-            {sections.map((section, index) => (
-              <button
-                type="button"
-                role="tab"
-                id={`tab-${section.id}`}
-                aria-controls={`panel-${section.id}`}
-                aria-selected={index === 0 ? "true" : "false"}
-                tabindex={index === 0 ? "0" : "-1"}
-                class={styles.tabButton}
-                data-tab-button
-                data-target={section.id}
-              >
-                {section.label}
-              </button>
-            ))}
-          </div>
-        )
-      }
-      {
-        sections.map((section, index) => (
-          <section
-            id={`panel-${section.id}`}
-            role="tabpanel"
-            aria-labelledby={`tab-${section.id}`}
-            class={styles.tabContainer}
-            data-tab-panel={section.id}
-            hidden={sections.length > 1 && index !== 0}
-          >
-            <h2>{section.label}</h2>
-            <div class="row">
-              {section.posts.map((post) => (
-                <div class="col-lg-4">
-                  <BlogCard entry={post} />
-                </div>
+    <section class="darkBlueBg">
+      <HeroBanner
+        bgColor="darkBlueBg"
+        btn={true}
+        img="/projectImages/blog-home.jpg"
+        imgAlt="Bell WebDev blog"
+        heading="Insights & Inspiration from the Frontlines of Web Development"
+        subheading="Explore expert tips, project highlights, and agency updates designed to help you build smarter, faster, and better digital experiences."
+      />
+    </section>
+    <section>
+      <div class={`container ${styles.blogHome}`}>
+        <h2 class={styles.sectionHeading}>
+          Behind-the-scenes looks at how our team solves real-world web
+          challenges.
+        </h2>
+        <hr />
+        {
+          sections.length > 1 && (
+            <div
+              class={styles.sectionNav}
+              role="tablist"
+              aria-label="Blog categories"
+            >
+              {sections.map((section, index) => (
+                <button
+                  type="button"
+                  role="tab"
+                  id={`tab-${section.id}`}
+                  aria-controls={`panel-${section.id}`}
+                  aria-selected={index === 0 ? "true" : "false"}
+                  tabindex={index === 0 ? "0" : "-1"}
+                  class={styles.tabButton}
+                  data-tab-button
+                  data-target={section.id}
+                >
+                  {section.label}
+                </button>
               ))}
             </div>
-          </section>
-        ))
-      }
-    </div>
-    <div class="container my-5 py-5">
-      <ContactForm
-        formHeading="Build the Future of Your Business with Custom Web Solutions"
-        formSubhead="Partner with Our Expert Team to Create Scalable, High-Performance Websites That Drive Results."
-      />
-    </div>
+          )
+        }
+        {
+          sections.map((section, index) => (
+            <div
+              id={`panel-${section.id}`}
+              role="tabpanel"
+              aria-labelledby={`tab-${section.id}`}
+              class={styles.tabContainer}
+              data-tab-panel={section.id}
+              hidden={sections.length > 1 && index !== 0}
+            >
+              <div class={styles.postsRow}>
+                {section.posts.map((post) => (
+                  <div class={styles.postCol}>
+                    <BlogCard entry={post} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+    <section class="blueOpacityBg">
+      <div class="container">
+        <ContactForm
+          formHeading="Build the Future of Your Business with Custom Web Solutions"
+          formSubhead="Partner with Our Expert Team to Create Scalable, High-Performance Websites That Drive Results."
+        />
+      </div>
+    </section>
   </main>
 </Layout>
 

@@ -1,3 +1,5 @@
+@use "../styles/variables" as *;
+
 .portfolio {
   hr {
     border: 1px solid var(--blue);
@@ -7,17 +9,43 @@
   }
 }
 
+.finalSection {
+  margin-block: 3rem;
+  padding-block: 3rem;
+}
+
+.sectionHeading {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.projectsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  @media (min-width: 992px) {
+    gap: 24px;
+  }
+}
+
+.projectCol {
+  display: flex;
+  width: 100%;
+  margin-top: 1.5rem;
+
+  @media (min-width: $breakpoint-lg) {
+    flex: 1 1 0;
+    margin-top: 0;
+  }
+}
+
 .projectCard {
-  height: 100%;
+  width: 100%;
   border-radius: 8px;
   box-shadow: 2px 2px 25px 0px #00000021;
-  padding: 1.75rem 1.5rem;
+  padding: 2rem 1.5rem;
   background-color: white;
-
-  h3 {
-    font-size: 20px;
-    margin-bottom: 0.25rem;
-  }
 
   p:last-child {
     margin-bottom: 0;

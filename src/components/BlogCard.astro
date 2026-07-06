@@ -8,13 +8,13 @@ const { title, subtitle, date, blogImage } = entry.data;
 ---
 
 <div class={styles.blogCard}>
-  <img class="img-fluid mb-3" src={blogImage} alt={title} />
-  <div class={`px-4 ${styles.cardBody}`}>
+  <img src={blogImage} alt={title} />
+  <div class={styles.cardBody}>
     <div>
       <p class={styles.date}>{formatDate(date)}</p>
       <h3>{title}</h3>
       <p>{subtitle}</p>
     </div>
-    <GhostButton href={`/blog/${entry.id}`} class="mb-3">Read More</GhostButton>
+    <GhostButton href={`/blog/${entry.id}`} class={styles.readMore}>Read More</GhostButton>
   </div>
 </div>

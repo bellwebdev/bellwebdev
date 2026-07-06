@@ -102,30 +102,26 @@ const cardFlipData = [
   description="Custom-coded sites and web apps, scoped and quoted for your business — from a $300 starter site to a fully custom web application."
 >
   <main class={styles.services}>
-    <HeroBanner
-      bgColor="darkBlueBg"
-      btn={true}
-      img="/projectImages/dual-monitor-mac.jpeg"
-      imgAlt="Dual monitor development setup"
-      heading="Services & Pricing"
-      subheading="Custom-coded sites and web apps, scoped and quoted for your business."
-    />
-    <div class="container my-5 py-5">
-      <div class="row justify-content-center text-center">
-        <div class="col-lg-8">
-          <p class="mb-0">
-            Every project is different, so these are starting points, not
-            fixed prices. After a quick conversation about what you need,
-            I'll give you a straightforward quote — no surprise fees.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="container mb-5 pb-5">
-      <div class="row">
+    <section class="darkBlueBg">
+      <HeroBanner
+        bgColor="darkBlueBg"
+        btn={true}
+        img="/projectImages/dual-monitor-mac.jpeg"
+        imgAlt="Dual monitor development setup"
+        heading="Services & Pricing"
+        subheading="Custom-coded sites and web apps, scoped and quoted for your business."
+      />
+    </section>
+    <section class={`container ${styles.tiersSection}`}>
+      <p class={styles.tierSubHead}>
+        Every project is different, so these are starting points, not
+        fixed prices. After a quick conversation about what you need,
+        I'll give you a straightforward quote — no surprise fees.
+      </p>
+      <div class={styles.tiersRow}>
         {
           tierData.map((tier) => (
-            <div class="col-lg-4 mt-4 mt-lg-0 d-flex">
+            <div class={styles.tierCol}>
               <div class={styles.tierCard}>
                 <h3>{tier.tierLabel}</h3>
                 <p class={styles.tierPrice}>{tier.price}</p>
@@ -143,13 +139,13 @@ const cardFlipData = [
           ))
         }
       </div>
-    </div>
-    <div class="blueOpacityBg py-4">
-      <div class="container py-5">
-        <div class="row justify-content-center text-center mb-4">
-          <div class="col-md-8">
-            <h2 class="text-center">What I Offer</h2>
-            <hr class="mt-3 mb-4" />
+    </section>
+    <section class="blueOpacityBg">
+      <div class="container">
+        <div class={styles.offerHeadingRow}>
+          <div class={styles.offerHeadingCol}>
+            <h2 class={styles.offerHeading}>What I Offer</h2>
+            <hr class={styles.offerDivider} />
             <p>
               Here's a closer look at what's included across projects. Don't
               see what you're looking for? Reach out — I may still be able to
@@ -157,10 +153,10 @@ const cardFlipData = [
             </p>
           </div>
         </div>
-        <div class="row align-items-center">
+        <div class={styles.cardFlipRow}>
           {
             cardFlipData.map((item) => (
-              <div class="col-md-6 col-lg-4">
+              <div class={styles.cardFlipCol}>
                 <CardFlip
                   faIcon={item.faIcon}
                   cardHeading={item.cardHeading}
@@ -172,12 +168,12 @@ const cardFlipData = [
           }
         </div>
       </div>
-    </div>
-    <div class="container my-5 py-5">
+    </section>
+    <section class={`container ${styles.finalSection}`}>
       <ContactForm
         formHeading="Ready to build something exceptional?"
         formSubhead="Get in touch to start your project today!"
       />
-    </div>
+    </section>
   </main>
 </Layout>

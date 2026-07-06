@@ -1,10 +1,32 @@
-.blogHome {
-  hr {
-    border: 1px solid var(--blue);
-    opacity: 1;
-    width: 30%;
-    margin: 0 auto;
+@use "../../styles/variables" as *;
+
+.sectionHeading {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.postsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.postCol {
+  width: 100%;
+  max-width: 476px;
+  @media (min-width: $breakpoint-md) {
+    flex: 1 1 calc((100% - 32px) / 2);
   }
+
+  @media (min-width: $breakpoint-lg) {
+    flex: 1 1 calc((100% - 32px) / 3);
+  }
+}
+
+.finalSection {
+  margin-block: 3rem;
+  padding-block: 3rem;
 }
 
 .sectionNav {
@@ -32,13 +54,5 @@
   &:focus-visible {
     outline: 2px solid var(--blue);
     outline-offset: 2px;
-  }
-}
-
-.tabContainer {
-  margin-top: 4rem;
-
-  h2 {
-    margin-bottom: 1.5rem;
   }
 }
