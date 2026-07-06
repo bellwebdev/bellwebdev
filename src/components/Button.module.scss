@@ -12,6 +12,7 @@
 
 .btn:hover {
   background-color: color-mix(in srgb, var(--turqoise), white 60%);
+  color: var(--dark-blue);
 }
 
 .btn:disabled {
