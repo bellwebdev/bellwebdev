@@ -3,7 +3,7 @@ featured: true
 blogImage: /img/iphone-plugged-in.jpg
 title: "How to Debug Websites on Mobile Safari Using macOS (Step-by-Step Guide)"
 subtitle: "Easily inspect, troubleshoot, and debug your website on iPhone and iPad using Safari's Web Inspector and a Mac — no third-party tools needed"
-date: "09/25/2025"
+date: "07/07/2026"
 category: how-to
 ---
 
@@ -53,16 +53,16 @@ Now you'll see a new **Develop** option in Safari's top navigation.
 
 1. On your iPhone/iPad, open the website you want to debug in Safari.
 2. On your Mac, click **Safari > Develop**.
-3. Select your device (e.g., *Bell WebDev's iPhone*).
+3. Select your device (e.g., _Bell WebDev's iPhone_).
 4. Choose the tab you want to inspect.
 
 ![Screenshot of connecting an iPhone using Develop in Safari toolbar](/img/connected-iphone.png)
 
 The **Web Inspector window** will appear, showing:
 
-* **Elements** → Inspect and live-edit HTML/CSS.
-* **Console** → Debug JavaScript errors.
-* **Network** → Track API calls and loading performance.
+- **Elements** → Inspect and live-edit HTML/CSS.
+- **Console** → Debug JavaScript errors.
+- **Network** → Track API calls and loading performance.
 
 Any edits you make reflect **live on your iPhone/iPad screen**.
 

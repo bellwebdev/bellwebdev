@@ -4,8 +4,6 @@ import { iconHtml } from "../utils/icon";
 import {
   faLinkedinIn,
   faFacebook,
-  faInstagram,
-  faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
 const year = new Date().getFullYear();
@@ -14,8 +12,6 @@ const year = new Date().getFullYear();
 const social = {
   linkedin: "#",
   facebook: "#",
-  instagram: "#",
-  x: "#",
 };
 ---
 
@@ -52,18 +48,6 @@ const social = {
           class={styles.socialIcon}
           aria-label="Bell WebDev on Facebook"
           set:html={iconHtml(faFacebook)}
-        />
-        <a
-          href={social.instagram}
-          class={styles.socialIcon}
-          aria-label="Bell WebDev on Instagram"
-          set:html={iconHtml(faInstagram)}
-        />
-        <a
-          href={social.x}
-          class={styles.socialIcon}
-          aria-label="Bell WebDev on X"
-          set:html={iconHtml(faXTwitter)}
         />
       </div>
     </div>

@@ -47,7 +47,7 @@ const { formHeading, formSubhead } = Astro.props;
             <textarea id="message" name="message" rows="3" placeholder="How can I help you?" required
             ></textarea>
           </div>
-          <Button type="submit">
+          <Button type="submit" id="contactSubmitBtn">
             Send My Message
             <span class={styles.loaderWrap} data-loader hidden>
               <Loader />

@@ -15,6 +15,6 @@ const { title, subtitle, date, blogImage } = entry.data;
       <h3>{title}</h3>
       <p>{subtitle}</p>
     </div>
-    <GhostButton href={`/blog/${entry.id}`} class={styles.readMore}>Read More</GhostButton>
+    <GhostButton href={`/blog/${entry.id}`} id={`readMoreBtn-${entry.id}`} class={styles.readMore}>Read More</GhostButton>
   </div>
 </div>
