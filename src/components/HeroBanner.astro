@@ -16,6 +16,7 @@ const { btn, btnText, img, imgAlt = "", heading, subheading } = Astro.props;
           btn && (
             <ButtonLink
               href="#contactForm"
+              id="heroCtaBtn"
               class={`${styles.fullWidth} ${styles.cta} blueBg`}
             >
               {btnText || "Get Started"}

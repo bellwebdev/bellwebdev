@@ -1,9 +1,9 @@
 ---
 import styles from "./ButtonLink.module.scss";
 
-const { href, class: className = "" } = Astro.props;
+const { href, id, class: className = "" } = Astro.props;
 ---
 
-<a href={href} class={`${styles.btn} ${className}`}>
+<a href={href} id={id} class={`${styles.btn} ${className}`}>
   <slot />
 </a>

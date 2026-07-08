@@ -43,5 +43,37 @@ const GA_ID = "G-PHHHDM8CE8";
     <Header />
     <slot />
     <Footer />
+    <script>
+      function trackClick(eventName: string, params: Record<string, unknown>) {
+        if (typeof window.gtag === "function") {
+          window.gtag("event", eventName, params);
+        }
+      }
+
+      document.addEventListener("click", (e) => {
+        const target = e.target instanceof Element ? e.target : null;
+        if (!target) return;
+
+        const link = target.closest("a[href]");
+        if (link instanceof HTMLAnchorElement) {
+          trackClick("link_click", {
+            link_text: link.textContent?.trim().slice(0, 100) || "",
+            link_url: link.href,
+            outbound: link.hostname !== window.location.hostname,
+            page_path: window.location.pathname,
+          });
+          return;
+        }
+
+        const button = target.closest("button");
+        if (button instanceof HTMLButtonElement) {
+          trackClick("button_click", {
+            button_text: button.textContent?.trim().slice(0, 100) || "",
+            button_id: button.id || "",
+            page_path: window.location.pathname,
+          });
+        }
+      });
+    </script>
   </body>
 </html>
