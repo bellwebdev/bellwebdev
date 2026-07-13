@@ -1,0 +1,82 @@
+@use "../styles/variables" as *;
+
+.heading {
+  margin-bottom: 1.5rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.item {
+  border: 1px solid rgba(64, 105, 178, 0.25);
+  border-radius: 6px;
+  background-color: rgba(100, 205, 245, 0.06);
+  overflow: hidden;
+
+  &[open] {
+    border-color: var(--turqoise);
+
+    .icon::before {
+      transform: rotate(90deg);
+      opacity: 0;
+    }
+  }
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  color: var(--dark-blue);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &:hover {
+    color: var(--blue);
+  }
+}
+
+.icon {
+  position: relative;
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 2px;
+    background-color: var(--turqoise);
+    transform: translate(-50%, -50%);
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+
+.answer {
+  padding: 0 1.25rem 1.25rem;
+
+  p {
+    margin: 0;
+  }
+}
