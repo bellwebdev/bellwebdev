@@ -10,6 +10,14 @@ const blog = defineCollection({
     featured: z.boolean().default(false),
     category: z.enum(["how-to", "agency-life"]).optional(),
     blogImage: z.string(),
+    faqs: z
+      .array(
+        z.object({
+          question: z.string(),
+          answer: z.string(),
+        }),
+      )
+      .optional(),
   }),
 });
 

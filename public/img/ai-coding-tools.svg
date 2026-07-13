@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="AI coding tools: a code editor with an AI circuit brain and a security warning shield">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d2540"/>
+      <stop offset="1" stop-color="#122e4e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14bbb8"/>
+      <stop offset="1" stop-color="#4069b2"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#14bbb8" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#14bbb8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="800" fill="url(#bg)"/>
+
+  <!-- faint circuit grid -->
+  <g stroke="#4069b2" stroke-opacity="0.12" stroke-width="2" fill="none">
+    <path d="M0 160 H1200 M0 400 H1200 M0 640 H1200"/>
+    <path d="M240 0 V800 M600 0 V800 M960 0 V800"/>
+  </g>
+  <circle cx="600" cy="400" r="420" fill="url(#glow)"/>
+
+  <!-- ===== code editor window ===== -->
+  <g filter="url(#soft)">
+    <rect x="120" y="215" width="600" height="380" rx="18" fill="#0a1e35" stroke="#4069b2" stroke-opacity="0.5" stroke-width="2"/>
+    <!-- title bar -->
+    <path d="M120 233 a18 18 0 0 1 18 -18 H702 a18 18 0 0 1 18 18 V262 H120 Z" fill="#16385c"/>
+    <circle cx="152" cy="238" r="7" fill="#e2574c"/>
+    <circle cx="176" cy="238" r="7" fill="#f2b134"/>
+    <circle cx="200" cy="238" r="7" fill="#14bbb8"/>
+    <text x="360" y="243" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="15" fill="#6f8bb0">ai-generated.py</text>
+
+    <!-- code lines -->
+    <g font-family="ui-monospace,Menlo,Consolas,monospace" font-size="17">
+      <text x="150" y="305" fill="#5a76a0">1</text>
+      <rect x="175" y="293" width="90"  height="14" rx="5" fill="#14bbb8"/>
+      <rect x="275" y="293" width="150" height="14" rx="5" fill="#7f9bc4"/>
+
+      <text x="150" y="338" fill="#5a76a0">2</text>
+      <rect x="195" y="326" width="120" height="14" rx="5" fill="#4069b2"/>
+      <rect x="325" y="326" width="200" height="14" rx="5" fill="#3a5480"/>
+
+      <text x="150" y="371" fill="#5a76a0">3</text>
+      <rect x="195" y="359" width="70"  height="14" rx="5" fill="#14bbb8"/>
+      <rect x="275" y="359" width="260" height="14" rx="5" fill="#7f9bc4"/>
+
+      <text x="150" y="404" fill="#5a76a0">4</text>
+      <rect x="215" y="392" width="180" height="14" rx="5" fill="#3a5480"/>
+
+      <!-- flagged line (security risk) -->
+      <rect x="138" y="418" width="564" height="30" rx="6" fill="#e2574c" fill-opacity="0.14"/>
+      <text x="150" y="437" fill="#e2574c">5</text>
+      <rect x="195" y="425" width="140" height="14" rx="5" fill="#e2574c"/>
+      <rect x="345" y="425" width="230" height="14" rx="5" fill="#a8503f"/>
+
+      <text x="150" y="470" fill="#5a76a0">6</text>
+      <rect x="195" y="458" width="110" height="14" rx="5" fill="#4069b2"/>
+      <rect x="315" y="458" width="140" height="14" rx="5" fill="#3a5480"/>
+
+      <text x="150" y="503" fill="#5a76a0">7</text>
+      <rect x="215" y="491" width="90"  height="14" rx="5" fill="#7f9bc4"/>
+
+      <text x="150" y="536" fill="#5a76a0">8</text>
+      <rect x="175" y="524" width="130" height="14" rx="5" fill="#14bbb8"/>
+      <rect x="315" y="524" width="70"  height="14" rx="5" fill="#3a5480"/>
+      <!-- cursor -->
+      <rect x="392" y="522" width="3" height="18" fill="#14bbb8"/>
+    </g>
+  </g>
+
+  <!-- ===== AI circuit brain node ===== -->
+  <g transform="translate(905 300)" filter="url(#soft)">
+    <g stroke="url(#accent)" stroke-width="3" fill="none" stroke-opacity="0.85">
+      <line x1="0" y1="0" x2="-140" y2="-60"/>
+      <line x1="0" y1="0" x2="-150" y2="80"/>
+      <line x1="0" y1="0" x2="120" y2="-90"/>
+      <line x1="0" y1="0" x2="130" y2="70"/>
+      <line x1="0" y1="0" x2="10" y2="150"/>
+    </g>
+    <g fill="#14bbb8">
+      <circle cx="-140" cy="-60" r="9"/>
+      <circle cx="-150" cy="80" r="9"/>
+      <circle cx="120" cy="-90" r="9"/>
+      <circle cx="130" cy="70" r="9"/>
+      <circle cx="10" cy="150" r="9"/>
+    </g>
+    <!-- central chip -->
+    <rect x="-52" y="-52" width="104" height="104" rx="20" fill="#16385c" stroke="#14bbb8" stroke-width="3"/>
+    <g stroke="#4069b2" stroke-width="4" stroke-linecap="round">
+      <line x1="-52" y1="-22" x2="-72" y2="-22"/>
+      <line x1="-52" y1="22" x2="-72" y2="22"/>
+      <line x1="52" y1="-22" x2="72" y2="-22"/>
+      <line x1="52" y1="22" x2="72" y2="22"/>
+      <line x1="-22" y1="-52" x2="-22" y2="-72"/>
+      <line x1="22" y1="-52" x2="22" y2="-72"/>
+    </g>
+    <!-- AI mark -->
+    <text x="0" y="12" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="34" fill="#14bbb8">AI</text>
+  </g>
+
+  <!-- ===== security warning shield ===== -->
+  <g transform="translate(690 470)" filter="url(#soft)">
+    <path d="M60 0 L118 22 V78 C118 128 92 160 60 178 C28 160 2 128 2 78 V22 Z"
+          fill="#122e4e" stroke="#e2574c" stroke-width="5"/>
+    <line x1="60" y1="48" x2="60" y2="106" stroke="#e2574c" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="60" cy="132" r="7" fill="#e2574c"/>
+  </g>
+
+  <!-- title -->
+  <text x="120" y="700" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="52" fill="#ffffff">AI Coding Tools</text>
+  <text x="122" y="748" font-family="Arial,Helvetica,sans-serif" font-weight="500" font-size="26" fill="#14bbb8">The Benefits, the Bugs &amp; the Security Risks</text>
+</svg>
