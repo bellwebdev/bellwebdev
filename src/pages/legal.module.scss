@@ -1,0 +1,27 @@
+@use "../styles/variables" as *;
+
+.legal {
+  padding-block: 4rem;
+  max-width: 800px;
+
+  @media (min-width: $breakpoint-lg) {
+    padding-block: 6rem;
+  }
+
+  h2 {
+    margin-top: 2.5rem;
+  }
+
+  ul {
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 0.75rem;
+    }
+  }
+}
+
+.updated {
+  color: var(--blue);
+  margin-bottom: 2rem;
+}

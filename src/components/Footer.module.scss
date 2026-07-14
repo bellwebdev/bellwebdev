@@ -12,7 +12,15 @@
 }
 
 .bottomRow {
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+
+  @media (min-width: 576px) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
 }
 
 .navCol {
@@ -36,11 +44,26 @@
 
 .copyCol,
 .socialCol {
-  flex: 1 0 0%;
+  width: 100%;
+
+  @media (min-width: 576px) {
+    width: auto;
+    flex: 1 0 0%;
+  }
 }
 
 .copyText {
   margin-bottom: 0;
+}
+
+.legalLink {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  margin-right: 0.5rem;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 @media (min-width: 576px) {
