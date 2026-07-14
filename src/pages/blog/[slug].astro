@@ -12,10 +12,18 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { title, subtitle } = entry.data;
+const { title, subtitle, blogImage } = entry.data;
+// og:image must be a raster format — social platforms don't render SVG previews
+const ogImage = blogImage.endsWith(".svg")
+  ? "/projectImages/macbook-with-code.webp"
+  : blogImage;
 ---
 
-<Layout title={`${title} | Bell WebDev Blog`} description={subtitle}>
+<Layout
+  title={`${title} | Bell WebDev Blog`}
+  description={subtitle}
+  image={ogImage}
+>
   <main>
     <BlogPost entry={entry} />
   </main>

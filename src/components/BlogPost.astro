@@ -5,7 +5,8 @@ import FAQ from "./FAQ.astro";
 import styles from "./BlogPost.module.scss";
 
 const { entry } = Astro.props;
-const { title, subtitle, date, blogImage, faqs } = entry.data;
+const { title, subtitle, date, blogImage, blogImageWidth, blogImageHeight, faqs } =
+  entry.data;
 const { Content } = await render(entry);
 ---
 
@@ -18,7 +19,12 @@ const { Content } = await render(entry);
         <p>{subtitle}</p>
       </div>
       <div class={styles.heroImage}>
-        <img src={blogImage} alt={title} />
+        <img
+          src={blogImage}
+          alt={title}
+          width={blogImageWidth}
+          height={blogImageHeight}
+        />
       </div>
     </div>
   </div>

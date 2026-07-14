@@ -1,6 +1,8 @@
 ---
 featured: true
 blogImage: /img/ai-coding-tools.svg
+blogImageWidth: 1200
+blogImageHeight: 800
 title: "AI Coding Tools for Developers: The Benefits, the Bugs, and the Security Risks"
 subtitle: "A professional developer breaks down the real benefits and risks of AI coding tools, from productivity wins to vibe coding security vulnerabilities."
 date: "07/11/2026"
