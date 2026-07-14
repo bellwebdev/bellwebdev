@@ -7,9 +7,12 @@ import Footer from "../components/Footer.astro";
 const {
   title = "Bell WebDev | Custom Web Development in the Lehigh Valley, PA",
   description = "Fast, custom-coded websites and web apps for Lehigh Valley businesses — built by a developer with 5 years of professional web engineering experience.",
+  image = "/projectImages/macbook-with-code.webp",
 } = Astro.props;
 
 const GA_ID = "G-PHHHDM8CE8";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(image, Astro.site);
 ---
 
 <!doctype html>
@@ -18,8 +21,21 @@ const GA_ID = "G-PHHHDM8CE8";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
     <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bell WebDev" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
     {
       import.meta.env.PROD && (
         <>
@@ -40,8 +56,11 @@ const GA_ID = "G-PHHHDM8CE8";
     }
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <Header />
-    <slot />
+    <div id="main-content">
+      <slot />
+    </div>
     <Footer />
     <script>
       function trackClick(eventName: string, params: Record<string, unknown>) {

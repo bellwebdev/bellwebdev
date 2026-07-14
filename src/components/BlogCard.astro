@@ -4,11 +4,17 @@ import GhostButton from "./GhostButton.astro";
 import styles from "./BlogCard.module.scss";
 
 const { entry } = Astro.props;
-const { title, subtitle, date, blogImage } = entry.data;
+const { title, subtitle, date, blogImage, blogImageWidth, blogImageHeight } =
+  entry.data;
 ---
 
 <div class={styles.blogCard}>
-  <img src={blogImage} alt={title} />
+  <img
+    src={blogImage}
+    alt={title}
+    width={blogImageWidth}
+    height={blogImageHeight}
+  />
   <div class={styles.cardBody}>
     <div>
       <p class={styles.date}>{formatDate(date)}</p>

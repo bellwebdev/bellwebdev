@@ -1,6 +1,8 @@
 ---
 featured: true
-blogImage: /img/iphone-plugged-in.jpg
+blogImage: /img/iphone-plugged-in.webp
+blogImageWidth: 1280
+blogImageHeight: 821
 title: "How to Debug Websites on Mobile Safari Using macOS (Step-by-Step Guide)"
 subtitle: "Easily inspect, troubleshoot, and debug your website on iPhone and iPad using Safari's Web Inspector and a Mac — no third-party tools needed"
 date: "07/07/2026"
@@ -26,7 +28,7 @@ To get started, you need to turn on Safari's hidden developer tool:
 3. Tap **Advanced** (bottom of the menu).
 4. Switch on **Web Inspector**.
 
-![screenshots of iphone/ipad settings to turn on web inspector](/img/web-inspector-settings.jpg)
+![screenshots of iphone/ipad settings to turn on web inspector](/img/web-inspector-settings.webp)
 
 Without this step, your Mac won't be able to connect to your iPhone's Safari browser.
 
@@ -35,7 +37,7 @@ Without this step, your Mac won't be able to connect to your iPhone's Safari bro
 1. Use a **USB cable** to connect your iOS device to your Mac.
 2. Unlock your device and tap **Trust This Computer** if prompted.
 
-![iphone plugged into macbook](/img/iphone-plugged-in.jpg)
+![iphone plugged into macbook](/img/iphone-plugged-in.webp)
 
 ### Step 3: Turn On the Develop Menu in Safari on Mac
 
@@ -47,7 +49,7 @@ By default, Safari hides the Develop menu. To enable it:
 
 Now you'll see a new **Develop** option in Safari's top navigation.
 
-![screenshot to turn on develop menu for safari](/img/safari-settings-screenshot.png)
+![screenshot to turn on develop menu for safari](/img/safari-settings-screenshot.webp)
 
 ### Step 4: Inspect and Debug Mobile Safari Tabs
 
@@ -56,7 +58,7 @@ Now you'll see a new **Develop** option in Safari's top navigation.
 3. Select your device (e.g., _Bell WebDev's iPhone_).
 4. Choose the tab you want to inspect.
 
-![Screenshot of connecting an iPhone using Develop in Safari toolbar](/img/connected-iphone.png)
+![Screenshot of connecting an iPhone using Develop in Safari toolbar](/img/connected-iphone.webp)
 
 The **Web Inspector window** will appear, showing:
 
@@ -77,9 +79,9 @@ Once inside the Safari Web Inspector, you can:
 
 Below is a screenshot showing how hovering over an HTML element in Safari Web Inspector on Mac highlights that same element live on your iPhone.
 
-![Screenshot of Safari dev tools html code](/img/safari-iphone-dev-tools.png)
+![Screenshot of Safari dev tools html code](/img/safari-iphone-dev-tools.webp)
 
-![Screenshot of iphone with element highlighted.](/img/iphone-screenshot.jpeg)
+![Screenshot of iphone with element highlighted.](/img/iphone-screenshot.webp)
 
 This workflow saves tons of time compared to guessing or blindly pushing changes.
 
