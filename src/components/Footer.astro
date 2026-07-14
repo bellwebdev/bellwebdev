@@ -16,7 +16,7 @@ const social = {
 ---
 
 <footer class="darkBlueBg whiteText">
-  <div class={`container ${styles.footerInner}`}>
+  <div class={`${styles.footerInner}`}>
     <div class={styles.topRow}>
       <div class={styles.navCol}>
         <img
@@ -32,9 +32,12 @@ const social = {
       </div>
       <hr class={`turqoiseText ${styles.divider}`} />
     </div>
-    <div class={styles.bottomRow}>
+    <div class="container">
+<div class={styles.bottomRow}>
       <div class={styles.copyCol}>
         <p class={styles.copyText}>&copy; {year} Bell Technology Solutions LLC</p>
+        <a class={styles.legalLink} href="/privacy">Privacy Policy</a>
+        <a class={styles.legalLink} href="/terms">Terms of Service</a>
       </div>
       <div class={styles.socialCol}>
         <a
@@ -50,6 +53,7 @@ const social = {
           set:html={iconHtml(faFacebook)}
         />
       </div>
+    </div>
     </div>
   </div>
 </footer>

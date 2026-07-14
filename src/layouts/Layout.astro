@@ -3,10 +3,11 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import "../styles/global.scss";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import CookieBanner from "../components/CookieBanner.astro";
 
 const {
   title = "Bell WebDev | Custom Web Development in the Lehigh Valley, PA",
-  description = "Fast, custom-coded websites and web apps for Lehigh Valley businesses — built by a developer with 5 years of professional web engineering experience.",
+  description = "Fast, custom-coded websites and web apps for Lehigh Valley businesses, built by a developer with 5 years of professional web engineering experience.",
   image = "/projectImages/macbook-with-code.webp",
 } = Astro.props;
 
@@ -62,6 +63,7 @@ const ogImageURL = new URL(image, Astro.site);
       <slot />
     </div>
     <Footer />
+    <CookieBanner />
     <script>
       function trackClick(eventName: string, params: Record<string, unknown>) {
         if (typeof window.gtag === "function") {

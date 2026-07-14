@@ -13,7 +13,7 @@ html {
 
 // Component classes (e.g. ContactForm's flex rows) set their own `display`,
 // which otherwise beats the browser's default [hidden] rule (same
-// specificity, author stylesheet wins) — this keeps the hidden attribute
+// specificity, author stylesheet wins), this keeps the hidden attribute
 // authoritative so toggling it in JS (e.g. ContactForm's success/error
 // states) actually works.
 [hidden] {

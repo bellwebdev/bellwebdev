@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { title, subtitle, blogImage } = entry.data;
-// og:image must be a raster format — social platforms don't render SVG previews
+// og:image must be a raster format: social platforms don't render SVG previews
 const ogImage = blogImage.endsWith(".svg")
   ? "/projectImages/macbook-with-code.webp"
   : blogImage;

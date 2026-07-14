@@ -1,0 +1,51 @@
+@use "../styles/variables" as *;
+
+.banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  border-top: 1px solid rgba(18, 46, 78, 0.15);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-block: 1rem;
+  text-align: center;
+
+  @media (min-width: $breakpoint-md) {
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.text {
+  margin-bottom: 0;
+  font-size: 0.875rem;
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.dismiss {
+  flex-shrink: 0;
+  border: 1px solid var(--dark-blue);
+  background: transparent;
+  color: var(--dark-blue);
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+
+  &:hover {
+    background: var(--dark-blue);
+    color: white;
+  }
+}
