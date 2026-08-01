@@ -21,9 +21,32 @@ const generateEmailContent = (data) => {
   };
 };
 
+const verifyTurnstileToken = async (token, ip, secret) => {
+  if (!token) return false;
+
+  const body = new URLSearchParams({ secret, response: token });
+  if (ip) body.append("remoteip", ip);
+
+  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+    method: "POST",
+    body,
+  });
+  const outcome = await res.json();
+  return outcome.success === true;
+};
+
 export async function onRequestPost({ request, env }) {
   try {
-    const data = await request.json();
+    const { "cf-turnstile-response": turnstileToken, ...data } = await request.json();
+    const ip = request.headers.get("CF-Connecting-IP");
+
+    if (!(await verifyTurnstileToken(turnstileToken, ip, env.TURNSTILE_SECRET_KEY))) {
+      return new Response(JSON.stringify({ message: "Verification failed" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
     const { text, html } = generateEmailContent(data);
 
     const res = await fetch("https://api.resend.com/emails", {

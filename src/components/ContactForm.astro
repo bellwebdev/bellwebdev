@@ -4,6 +4,7 @@ import Loader from "./Loader.astro";
 import styles from "./ContactForm.module.scss";
 
 const { formHeading, formSubhead } = Astro.props;
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <div class={`darkBlueBg ${styles.bRadius}`} id="contactForm" data-contact-form>
@@ -47,6 +48,7 @@ const { formHeading, formSubhead } = Astro.props;
             <textarea id="message" name="message" rows="3" placeholder="How can I help you?" required
             ></textarea>
           </div>
+          <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
           <Button type="submit" id="contactSubmitBtn">
             Send My Message
             <span class={styles.loaderWrap} data-loader hidden>
@@ -70,6 +72,8 @@ const { formHeading, formSubhead } = Astro.props;
     </div>
   </div>
 </div>
+
+<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 <script>
   document.querySelectorAll("[data-contact-form]").forEach((wrapper) => {
