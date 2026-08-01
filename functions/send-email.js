@@ -1,5 +1,3 @@
-import { mailOptions, transporter } from "./_nodemailer.js";
-
 const CONTACT_MESSAGE_FIELDS = {
   fname: "First Name",
   lname: "Last Name",
@@ -23,21 +21,34 @@ const generateEmailContent = (data) => {
   };
 };
 
-export default async (req) => {
-  if (req.method !== "POST") {
-    return new Response(JSON.stringify({ message: "Bad request" }), {
-      status: 400,
-      headers: { "Content-Type": "application/json" },
-    });
-  }
-
+export async function onRequestPost({ request, env }) {
   try {
-    const data = await req.json();
-    await transporter.sendMail({
-      ...mailOptions,
-      ...generateEmailContent(data),
-      subject: "POTENTIAL CUSTOMER",
+    const data = await request.json();
+    const { text, html } = generateEmailContent(data);
+
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: env.RESEND_FROM_EMAIL,
+        to: "fbellweb.dev@gmail.com",
+        subject: "POTENTIAL CUSTOMER",
+        text,
+        html,
+      }),
     });
+
+    if (!res.ok) {
+      const error = await res.text();
+      return new Response(JSON.stringify({ message: error }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { "Content-Type": "application/json" },
@@ -48,4 +59,4 @@ export default async (req) => {
       headers: { "Content-Type": "application/json" },
     });
   }
-};
+}
