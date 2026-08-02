@@ -5,8 +5,10 @@
   flex-direction: column;
   height: 100%;
   img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     margin-bottom: 1rem;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
